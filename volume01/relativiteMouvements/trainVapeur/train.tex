@@ -1,0 +1,258 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\scl{0.4}%scaling factor of the picture
+\begin{tikzpicture}[
+  scale=\scl,
+  wagon/.style={green!70!brown!20!black!75!,draw=black,thick},
+  roue/.style={brown!20!black!70!,draw=black,thick},
+  fenetre/.style={white,rounded corners = 2pt,draw=black, thick},
+  porte/.style={green!70!brown!20!black!75!,rounded corners = 2pt,draw=gray!50!black, thick},
+  tender/.style={gray!70!brown!20!black!75!}
+  ]
+%
+%                                                  MOTRICE À VAPEUR
+  \begin{scope}[xshift=6.7 cm,yshift=0 cm]
+
+\def\hauteur{0.2}%
+\def\x{1.9}%
+ % BUTOIR droite
+  \shade[bottom color=brown!10!gray!30!black!90!, top color=brown!20!gray!40!black!90!,rounded corners=1pt]
+ (9.65 - \x, 0.9 + \hauteur) rectangle (11.2 - \x, 1.25 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!]
+ (11.2 - \x, 0.98 + \hauteur) rectangle (11.4 - \x, 1.17 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!,rounded corners=1pt]
+ (11.4 - \x, 0.8 + \hauteur) rectangle (11.5 - \x, 1.35 + \hauteur);
+
+%  LIASON
+ % \shade[bottom color=brown!10!gray!40!black, top color=brown!20!black!80!,rounded corners=1pt,draw=gray,thin]
+  \fill[color=brown!50!gray!50!,rounded corners=1pt,draw=black!80!gray,thick]
+ (-0.15, 1.25) rectangle (1.5, 1.4);
+
+ % SOL  
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (0.3, 1.4) rectangle (8.8, 1.5);
+
+  \shade[bottom color=brown!10!black, top color=brown!20!black,rounded corners=2pt]
+ (2.4, 0.7) rectangle (6.6, 1.9); %  ESSIEU
+
+ % \fill[brown!20!gray!70!,draw=black,thick,rounded corners=2pt] (1.5, 0.7) rectangle (7.8, 1.9);(0.7, 1.4) rectangle (8.8, 1.5);
+
+
+ % CHAUDIÈRE
+  \shade[bottom color=brown!10!black!90!, top color=brown!10!gray!99!,rounded corners=2pt]
+ (7, 2.1) rectangle (8.6, 3.6); % couvercle avant
+  \shade[bottom color=brown!10!black!90!, top color=brown!10!gray!99!,rounded corners=3pt]
+ (2.7, 1.9) rectangle (8.4, 3.8); % chaudière
+
+
+ % RÉSERVOIR
+  \shade[bottom color=brown!10!gray!50!black, top color=brown!20!gray!40!black]
+ (2.9, 1.7) rectangle (5.7, 3);
+
+ % CYLINDRE
+    \fill[black](7.4, 0.7) rectangle (8.2, 2); %support
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!,rounded corners=1pt]
+ (6.7, 0.75) rectangle (7.5, 0.95); %tige
+
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black, draw=black,rounded corners=2pt]
+ (7.2, 0.6) rectangle (8.4, 1.1);
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black, draw=black,rounded corners=1pt]
+ (7.3, 1.2) rectangle (8.3, 1.5);
+
+ % TOIT
+  \shade[bottom color=gray!60!black, top color=white!60!black]
+ (-0.4, 4.25) rectangle (3.2, 4.75);
+
+ % CABINE
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (0.6, 1.5) rectangle (3.1, 4.25);
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (0.3, 1.5) rectangle (0.6, 3.2);
+    \fill[fenetre](1.1, 3.3) rectangle (1.8, 4.1);
+    \fill[fenetre](1.9, 3.5) rectangle (2.7, 4.1);
+
+
+\def\hauteur{0.9}%  ROUES
+  \fill[black!20!gray!70!,draw=black,thin] (3.2, \hauteur) circle (0.7 cm);
+  \fill[brown!20!gray!70!,draw=black,thick] (3.2, \hauteur) circle (0.65 cm);
+  \fill[brown!20!black!70!,draw=black,thick] (3.2, \hauteur) circle (0.55 cm);
+  \fill[black!20!gray!70!,draw=black,thick] (3.2, \hauteur) circle (0.2 cm);
+  %\fill[brown!20!gray!70!,draw=black,thick] (3.2, \hauteur) circle (0.04 cm);
+
+  \fill[black!20!gray!70!,draw=black,thin] (5.8, \hauteur) circle (0.7 cm);
+  \fill[brown!20!gray!70!,draw=black,thick] (5.8, \hauteur) circle (0.65 cm);
+  \fill[brown!20!black!70!,draw=black,thick] (5.8, \hauteur) circle (0.55 cm);
+  \fill[black!20!gray!70!,draw=black,thick] (5.8, \hauteur) circle (0.2 cm);
+  %\fill[brown!20!gray!70!,draw=black,thick] (5.8, \hauteur) circle (0.04 cm);
+
+ % EMBIELLAGE
+
+  \shade[bottom color=brown!10!gray!40!black, top color=brown!20!gray!80!,rounded corners=1pt]
+ (3.4, 0.5) rectangle (6, 0.7); % entre roues
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!80!]
+ (5.9, 0.6) circle (0.2 cm); % axe avant
+
+  \shade[bottom color=brown!10!gray!40!black, top color=brown!20!gray!40!,shading angle={25},rounded corners=1pt]
+ (3.4, 0.5) -- (3.4, 0.7) -- (6.7, 0.95) -- (6.7, 0.75) -- cycle; % bielle
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!80!]
+ (3.5, 0.6) circle (0.2 cm); % axe roue
+
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!80!]
+ (6.7, 0.85) circle (0.2 cm); % axe liaison
+
+  % RAIL
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (0, 0.25) rectangle (11.6, 0.1);
+
+  \end{scope}
+%
+%
+
+
+%
+%     TENDER
+%
+  \begin{scope}[xshift=0 cm,yshift=0 cm]
+
+ % BUTOIR gauche
+\def\hauteur{0.2}%
+  %  LIASON gauche
+    \fill[color=brown!50!gray!50!,draw=black!80!gray,thin]
+     (1.85, 0.82 + \hauteur) rectangle (-0.3, 0.93 + \hauteur);
+  \shade[bottom color=brown!10!gray!30!black!90!, top color=brown!20!gray!40!black!90!,rounded corners=1pt]
+ (1.85, 0.9 + \hauteur) rectangle (0.3, 1.25 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!]
+ (0.3, 0.98 + \hauteur) rectangle (0.1, 1.17 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!,rounded corners=1pt]
+ (0, 0.8 + \hauteur) rectangle (0.1, 1.35 + \hauteur);
+
+
+%  LIASON DROITE
+  \fill[color=brown!50!gray!50!,rounded corners=1pt,draw=black!80!gray,thick]
+ (5.5, 1.25) rectangle (6.65, 1.4);
+
+ % CORPS
+
+    \fill[tender] (0.8, 1.3) rectangle (6.0, 3.1); % milieux
+    \fill[tender] (6.0, 1.3) rectangle (6.3, 3.1); % avant
+    \fill[tender] (2.2, 3.1) rectangle (5.7, 3.7); % haut
+
+\def\hauteur{0.65} % hauteur des roues
+
+    \fill[tender] (1.0,  \hauteur - 0.1) rectangle (5.8, 1.3); % bas
+
+%  ROUES
+  \foreach \x in {0, 1,..., 2}
+ { \fill[black!20!gray!70!,draw=black,thin] (1.8 +\x * 1.65, \hauteur) circle (0.4 cm);
+  \fill[brown!20!gray!70!,draw=black,thick] (1.8 +\x * 1.65, \hauteur) circle (0.35 cm);
+  \fill[brown!20!black!70!,draw=black,thick] (1.8 +\x * 1.65, \hauteur) circle (0.25 cm); }
+
+ % ESSIEUX
+  \foreach \x in {0, 1,..., 2}
+ { \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (1.6 +\x * 1.65, \hauteur -0.2) -- (2.0 +\x * 1.65, \hauteur -0.2) -- (2.2 +\x * 1.65, 1.0) -- (1.4 +\x * 1.65, 1.0) -- cycle;
+  \fill[black!20!gray!70!,draw=black,thin] (1.8 +\x * 1.65, \hauteur) circle (0.15 cm);
+  \fill[brown!20!gray!70!,draw=black,thick] (1.8 +\x * 1.65, \hauteur) circle (0.04 cm); }
+
+  % RAIL
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (-1, 0.25) rectangle (7.5, 0.1);
+
+  \end{scope}
+%
+%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{tikzpicture}
+%
+%                                                                  WAGON
+%
+  \begin{scope}[xshift=-12 cm,yshift=0 cm]
+
+ % CORPS
+  \shade[bottom color=green!70!brown!20!black!75!, top color=green!70!brown!20!black!80!,draw=black,thin]
+ (0.7, 1.25) rectangle (10.8, 3.75);
+ % \fill[wagon]
+ (0.7, 1.25) rectangle (10.8, 3.75);
+
+ % TOIT
+  \shade[bottom color=gray!60!black, top color=white!60!black]
+ (0.5, 3.75) rectangle (11, 4.5);
+
+ % SOL
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (0.7, 1.25) rectangle (10.8, 1.5);
+
+\def\hauteur{0.75}%  ROUES
+  \fill[black!20!gray!70!,draw=black,thin] (3, \hauteur) circle (0.55 cm);
+  \fill[brown!20!gray!70!,draw=black,thick] (3, \hauteur) circle (0.5 cm);
+  \fill[brown!20!black!70!,draw=black,thick] (3, \hauteur) circle (0.4 cm);
+
+  \fill[black!20!gray!70!,draw=black,thin] (8.5, \hauteur) circle (0.55 cm);
+  \fill[brown!20!gray!70!,draw=black,thick] (8.5, \hauteur) circle (0.5 cm);
+  \fill[brown!20!black!70!,draw=black,thick] (8.5, \hauteur) circle (0.4 cm);
+
+ % ESSIEUX
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black, draw=black,thick]
+ (8.25, \hauteur -0.25) -- (8.75, \hauteur -0.25) --
+ (9, 1.25) -- (8, 1.25) -- cycle;
+
+  \fill[black!20!gray!70!,draw=black,thin] (8.5, \hauteur) circle (0.15 cm);
+  \fill[brown!20!gray!70!,draw=black,thick] (8.5, \hauteur) circle (0.04 cm);
+
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black, draw=black,thick]
+ (2.75, \hauteur -0.25) -- (3.25, \hauteur -0.25) --
+ (3.5, 1.25) -- (2.5, 1.25) -- cycle;
+  \fill[black!20!gray!70!,draw=black,thick] (3, \hauteur) circle (0.15 cm);
+  \fill[brown!20!black!70!,draw=black,thick] (3, \hauteur) circle (0.04 cm);
+
+\def\hauteur{0.2}%
+  %  LIASON gauche
+   % \fill[color=brown!50!gray!50!black!80!]
+    \fill[color=red]
+     (1.85, 0.82 + \hauteur) rectangle (-0.3, 0.93 + \hauteur);
+  %  LIASON droite
+    \fill[color=red]
+     (9.65, 0.82 + \hauteur) rectangle (11.2, 0.93 + \hauteur);
+
+ % BUTOIR gauche   sol : (0.7, 1.25) rectangle (10.8, 1.5);
+  \shade[bottom color=brown!10!gray!30!black!90!, top color=brown!20!gray!40!black!90!,rounded corners=1pt]
+ (1.85, 0.9 + \hauteur) rectangle (0.3, 1.25 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!]
+ (0.3, 0.98 + \hauteur) rectangle (0.1, 1.17 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!,rounded corners=1pt]
+ (0, 0.8 + \hauteur) rectangle (0.1, 1.35 + \hauteur);
+ % BUTOIR droite   sol : (0.7, 1.25) rectangle (10.8, 1.5);
+  \shade[bottom color=brown!10!gray!30!black!90!, top color=brown!20!gray!40!black!90!,rounded corners=1pt]
+ (9.65, 0.9 + \hauteur) rectangle (11.2, 1.25 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!]
+ (11.2, 0.98 + \hauteur) rectangle (11.4, 1.17 + \hauteur);
+  \shade[bottom color=brown!10!gray!60!black, top color=brown!20!gray!40!,rounded corners=1pt]
+ (11.4, 0.8 + \hauteur) rectangle (11.5, 1.35 + \hauteur);
+
+ % SOL  \fill[black] (0.75, 1.25) rectangle (10.75, 1.5);
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (0.7, 1.25) rectangle (10.8, 1.5);
+
+      % FENÊTRES
+  \foreach \t in {0, 1,..., 4}
+    \fill[fenetre](2.25 + 1.5*\t, 2.5) rectangle (3.25 + 1.5*\t, 3.5);
+
+
+      % PORTES
+    \fill[porte](0.75, 1.53) rectangle (1.75, 3.72);
+    \fill[porte](9.75, 1.53) rectangle (10.75, 3.72);
+
+    \fill[fenetre](1.05, 2.5) rectangle (1.45, 3.5);
+    \fill[fenetre](10.05, 2.5) rectangle (10.45, 3.5);
+
+  % RAIL
+  \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
+ (0, 0.25) rectangle (11.6, 0.1);
+
+  \end{scope}
+%
+%
+\end{tikzpicture}
