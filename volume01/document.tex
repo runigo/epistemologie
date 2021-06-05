@@ -65,6 +65,7 @@
 
 \hypersetup{colorlinks=true,linkcolor=black}
 
+\usepackage{makeidx}
 
 %\PreviewEnvironment{tikzpicture}
 %\setlength\PreviewBorder{0pt}%
@@ -83,6 +84,7 @@ pdfkeywords = {Document},	% Mots-clefs
 pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %pdfcreator = {MikTeX},% Logiciel qui a crée le document
 %pdfproducer = {} % Société avec produit le logiciel
+\makeindex % Créer un index
 %======================== DEBUT DU DOCUMENT ========================
 %
 \begin{document}
@@ -113,18 +115,22 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %
 %\input{./evolutionScientifique/evolutionScientifique.tex}
 %
-%\input{./relativiteMouvements/relativiteMouvements.tex}
+%\input{./systemeMonde/systemeMonde.tex}
+%
+\input{./relativiteMouvements/relativiteMouvements.tex}
+%
+\input{./thermodynamiqueStatistique/thermodynamiqueStatistique.tex}
 %
 %\input{./systemeMonde/astroclubmarsan/astroclubmarsan.tex}
-\input{./systemeMonde/systemeMonde.tex}
 %
 %\input{.//.tex}
 %
 %\input{.//.tex}
 %
 %
-%\input{./annexe/annexe.tex}
+\input{./annexe/annexe.tex}
 %
+%\printindex
 %
 %====================== INCLUSION DE LA BIBLIOGRAPHIE ======================
 %
