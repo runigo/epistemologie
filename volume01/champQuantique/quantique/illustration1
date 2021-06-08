@@ -1,0 +1,25 @@
+
+\begin{tikzpicture}%[scale=0.5]
+    %  Ciel
+  \shade[bottom color=cyan!60!black, top color=blue!20!white] (0,0) rectangle (15,4.5);
+    %  Sol
+  \shade[bottom color=green!50!black, top color=green!70!black] (0,1) rectangle (15,-2);
+    %  Mare
+  \shade[bottom color=blue!50!white, top color=cyan!60!black] (7.5,0) ellipse (5 and 0.6);
+    %  Arbre
+ % \pic at (2,2)    {arbre};
+    %  Personnage
+
+  \begin{scope}[xshift=2 cm,yshift=1.5 cm]
+    % corps et tête
+ \fill [black] (0,0)ellipse(0.25 and 0.55);
+ \fill [black](0,0.75)circle(0.2);
+    % jambe et pieds
+ \fill [rounded corners=2pt] (0.1,-0.3)rectangle(-0.1,-1.5);
+ \fill [rounded corners=2pt] (0.3,-1.4)rectangle(-0.1,-1.5);
+    % bras
+ \fill [rounded corners=2pt, rotate=-15] (-0.1,0.42)rectangle(0.5,0.29);
+ \fill [rounded corners=2pt] (0.44,0.17)rectangle(1,0.29);
+   % Balle
+ \fill[red] (1,0.1) circle(0.1);
+  \end{scope}

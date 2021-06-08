@@ -1,0 +1,210 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Application à la quantique}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Observation}
+
+La confrontation de la théorie avec l'expérience nécessite "l'observation" des particules à l'aide de détecteur. La technologie fournit également des "sources", des moyens d'émettre des particules. Ces appareils (détecteur et émetteur) sont très performant et permettent des mesures qui viennent confronter les modèles théoriques de la physique quantique.
+
+\subsection{Le modèle standard}
+
+Dans le modèle standard de la physique quantique, . Lorsqu'un électron est émis par une source, la théorie donne la probabilité d'observer celui-ci par un détecteur. Lorsque plusieurs électrons sont émis, ceux-ci vont interagir entre-eux sans que l'on observe ces interactions.
+
+\begin{itemize}[leftmargin=1cm, label=\ding{32}, itemsep=1pt]
+\item l'observation des évènement est probabiliste
+\item Les électrons interagissent en échangeant des photons.
+\end{itemize}
+
+\section{Exemple}
+
+%\vspace{1.1cm}
+\begin{minipage}[c]{.45\linewidth}
+
+Dans l'exemple précédent, un électron se déplace de 1 à 3 tandis qu'un autre électron se déplace de 2 à 4. La détection des électrons en 3 et en 4 permet de savoir que deux électrons ont été émis en 1 et en 2, mais ne permet pas de savoir ce qui s'est passé au cours de leur déplacement. En particulier, on ne sait pas si l'électron détecté en 3 est celui qui a été produit en 1 ou celui produit en 2.
+
+
+% Les deux électrons ont interagit de . Autrement dit, le diagramme précédent ne représente qu'une possiblité de ce qui s'est passé. Les diagrammes suivants représentent d'autres possibilités conduisant aux mêmes mesures expérimentales, aux mêmes observations.
+
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+% désactive les caractères pour babel ? %\shorthandoff{:;!?};
+\begin{scope}[scale=0.7]
+%Création des axes xy
+   \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+   \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+   \coordinate (e1) at (2,1);
+   \coordinate (e2) at (3.5,1);
+   \coordinate (e3) at (1,4);
+   \coordinate (e4) at (4,4);
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e3);
+\draw [electron, very thick] (e2) -- (e4);
+% Nommage
+  \draw (e1) node [left] {1};
+  \draw (e2) node [right] {2};
+  \draw (e3) node [left] {3};
+  \draw (e4) node [right] {4};
+\end{scope}
+%
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{0.9cm}
+On suppose que l'on dispose d'un dispositif expérimental permettant de détecter les électrons en 3 et en 4 (ainsi bien entendu qu'un dispositif émettant les électrons en 1 et en 2). 
+
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+%above, below, right, left,
+%above left, above right, below left, below right
+%au-dessus, en-dessous, à droite, à gauche
+%au-dessus à gauche, au-dessus à droite, en-dessous à gauche, en-dessous à droite
+\begin{scope}[scale=0.7]
+%Création des axes xy
+   \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+   \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+   \coordinate (e1) at (1.5,1);
+   \coordinate (e2) at (3.5,1);
+   \coordinate (e3) at (1,4);
+   \coordinate (e4) at (4,4);
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e4);
+\draw [electron, very thick] (e2) -- (e3);
+% Nommage
+  \draw (e1) node [left] {1};
+  \draw (e2) node [right] {2};
+  \draw (e3) node [left] {3};
+  \draw (e4) node [right] {4};
+\end{scope}
+\end{tikzpicture}
+\begin{center}
+{\bf Chemin 1.}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+\begin{scope}[scale=0.7]
+%Création des axes xy
+   \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+   \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+   \coordinate (e1) at (1.5,1);
+   \coordinate (e2) at (4.2,1);
+   \coordinate (e5) at (2,2.4);
+
+   \coordinate (e3) at (1,4);
+   \coordinate (e4) at (4.4,4);
+   \coordinate (e6) at (3.4,2.6);
+
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e5);
+\draw [electron, very thick] (e5) -- (e3);
+\draw [electron, very thick] (e2) -- (e6);
+\draw [electron, very thick] (e6) -- (e4);
+\draw [photon, very thick] (e6) -- (e5);
+% Nommage
+  \draw (e1) node [left] {1};
+  \draw (e2) node [right] {2};
+  \draw (e3) node [left] {3};
+  \draw (e4) node [right] {4};
+\end{scope}
+\end{tikzpicture}
+\begin{center}
+{\bf Chemin 2.}
+\end{center}
+\end{minipage}
+\vspace {.7cm}
+
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+\begin{scope}[scale=0.7]
+%Création des axes xy
+   \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+   \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+   \coordinate (e11) at (1,1);
+   \coordinate (e12) at (1.7,2);
+   \coordinate (e13) at (1.8,3.5);
+   \coordinate (e14) at (1,4.5);
+
+   \coordinate (e21) at (4.2,1);
+   \coordinate (e22) at (3.4,2.2);
+   \coordinate (e23) at (3.4,3.2);
+   \coordinate (e24) at (4.5,4.5);
+% dessin des particules
+\draw [electron, very thick] (e11) -- (e12);
+\draw [electron, very thick] (e12) -- (e13);
+\draw [electron, very thick] (e13) -- (e14);
+\draw [electron, very thick] (e21) -- (e22);
+\draw [electron, very thick] (e22) -- (e23);
+\draw [electron, very thick] (e23) -- (e24);
+\draw [photon, very thick] (e12) -- (e22);
+\draw [photon, very thick] (e13) -- (e23);
+% Nommage
+% Nommage
+  \draw (e11) node [left] {1};
+  \draw (e14) node [left] {3};
+  \draw (e21) node [right] {2};
+  \draw (e24) node [right] {4};
+\end{scope}
+\end{tikzpicture}
+\begin{center}
+{\bf Chemin 3.}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+\begin{scope}[scale=0.7]
+%Création des axes xy
+   \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+   \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+   \coordinate (e1) at (1.5,1);
+   \coordinate (e2) at (3.5,1);
+   \coordinate (e3) at (1,4);
+   \coordinate (e4) at (4,4);
+% Définition des noeuds
+   \coordinate (e1) at (1.5,1);
+  % \coordinate (e2) at (4.2,1);
+   \coordinate (e5) at (2,2.4);
+
+   \coordinate (e3) at (1,4);
+ %  \coordinate (e4) at (4.4,4);
+   \coordinate (e6) at (3.4,2.6);
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e5);
+\draw [electron, very thick] (e5) -- (e4);
+\draw [electron, very thick] (e2) -- (e6);
+\draw [electron, very thick] (e6) -- (e3);
+\draw [photon, very thick] (e6) -- (e5);
+% Nommage
+  \draw (e1) node [left] {1};
+  \draw (e2) node [right] {2};
+  \draw (e3) node [left] {3};
+  \draw (e4) node [right] {4};
+\end{scope}
+\end{tikzpicture}
+\begin{center}
+{\bf Chemin 4.}
+\end{center}
+\end{minipage}
+
+\subsubsection{Validation expérimentale}
+
+%On pourrait imaginer que les deux électrons observés en 3 et 4 proviennent du même dispositif "émetteur" (en 1 ou en 2). En pratique, on peut supposer que la détection de deux électrons en 3 et 4 presque simultanément implique qu'ils n'ont pas été émis par le même "émeteur".
+
+La réalisation d'un grand nombre d'observations permet de mesurer statistiquement la probalité d'observer ces deux électrons.
+
+La théorie permet de calculer la probabilité de réalisation de chacun des chemins possibles, leur somme permet de retrouver la valeur mesurée par l'expérience.
+
+Les diagrammes permettent de faciliter les calculs, l'accord entre la théorie et l'observation montre l'intérêt de ces diagrammes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

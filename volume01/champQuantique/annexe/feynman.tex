@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Diagrammes de Feynman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{JeanLucDeziel}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Définition}
+%%%%%%%%%%%%%%%%%%%%
+
+Un diagramme de Feynman est généralement un graphe en 2 dimensions où l'un des axe est attribué à l'espace, l'autre au temps.
+
+Les diagrammes de Feynman sont une façon très simple de représenter des interactions entre des particules. \cite{diagrammesFeynman}
+
+Dans le cas où l'on s'interesse à l'interaction entre les électrons et les photons, il existe trois règles d'une simplicité remarquable dont on doit tenir compte afin de construire ce genre de diagramme :
+\begin{itemize}[leftmargin=1cm, label=\ding{32}, itemsep=1pt]
+\item Un photon va d'un point à un autre
+\item Un électron va d'un point à un autre
+\item Un électron émet ou absorbe un photon
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%
+\section{Exemple}
+%%%%%%%%%%%%%%%%%
+
+\tikzset{
+    photon/.style={decorate, decoration={snake}, draw=red},
+    electron/.style={draw=blue, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=blue]{>}}}},
+    gluon/.style={decorate, draw=magenta,
+        decoration={coil,amplitude=4pt, segment length=5pt}} 
+}
+
+\begin{tikzpicture}[
+        thick,
+        % Set the overall layout of the tree
+        level/.style={level distance=1.5cm},
+        level 2/.style={sibling distance=2.6cm},
+        level 3/.style={sibling distance=2cm}
+    ]
+    \coordinate
+        child[grow=left]{
+            child {
+                node {$g$}
+                % The 'edge from parent' is actually not needed because it is
+                % implicitly added.
+                edge from parent [gluon]
+            }
+            child {
+                node {$g$}
+                edge from parent [gluon]
+            }
+            edge from parent [gluon] node [above=3pt] {$g$}
+        }
+        % I have to insert a dummy child to get the tree to grow
+        % correctly to the right.
+        child[grow=right, level distance=0pt] {
+        child  {
+            child {
+                child {
+                    node {$\bar{d}$}
+                    edge from parent [electron]
+                }
+                child {
+                    node {$u$}
+                    edge from parent [electron]
+                }
+                edge from parent [photon]
+            }
+            child {
+                node {$b$}
+                edge from parent [electron]
+            }
+            edge from parent [electron]
+            node [below] {$t$}
+        }
+        child {
+            child {
+                node {$\bar{b}$}
+                edge from parent [electron]
+            }
+            child {
+                child {
+                    node {$\bar{v}$}
+                    edge from parent [electron]
+                }
+                child {
+                    node {$e^{-}$}
+                    edge from parent [electron]
+                }
+                edge from parent [photon]
+            }
+            edge from parent [electron]
+            node [above] {$\bar{t}$}
+        }
+    };
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

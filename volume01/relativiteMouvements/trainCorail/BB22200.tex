@@ -2,28 +2,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\scl{1}%scaling factor of the picture
 
-\def\hauteur{0.45}% de l'axe des roues
-\tikzset{
-  roue/.pic={
-    \fill[black!20!gray!70!] (0, \hauteur) circle (0.45 cm);
-    \fill[gray!20!] (0, \hauteur) circle (0.41 cm);
-    \fill[black!20!gray!70!] (0, \hauteur) circle (0.38 cm);
-
-
-  \fill[color=gray,draw=gray!20!, ultra thin] %,rotate=45
- (0.1, \hauteur + -0.1) rectangle (-0.1, \hauteur + 0.1);
-    \fill[color=gray,draw=gray!20!, ultra thin] (0, \hauteur) circle (0.08 cm);
-
-  \fill[color=gray,draw=gray!20!, ultra thin] %,rotate=45
- (0.08, \hauteur + 0.12) rectangle (-0.08, \hauteur + 0.18);
-
-  \fill[color=gray,draw=gray!20!, ultra thin] %,rotate=45
- (0.1, \hauteur + 0.2) rectangle (-0.1, \hauteur + 0.35);
-
-  %\fill[color=gray,draw=gray!20!, ultra thin] (0.1, 0.9) rectangle (17.4, 2.2);
-  }
-}
-
 
 \begin{tikzpicture}[
   scale=\scl,
@@ -33,15 +11,18 @@
  % toit/.style={black!70!brown!20!,draw=gray,thick},!80!gray!10!brown!20!yellow!10!
   %roue/.style={brown!20!black!70!,draw=black,thick},
   fenetre/.style={white,rounded corners = 2pt,draw=black, thick},
-  porte/.style={red!55!black,draw=gray!20!, ultra thin}
+  porte/.style={red!55!black,draw=gray!20!, ultra thin},
+  porteMotrice/.style={rounded corners = 1pt,draw=gray!60!, ultra thin},
+  essieux/.style={gray!20!brown!30!black!50!,draw=gray!70!black, ultra thin},
+  grisEssieux/.style={gray!20!brown!30!black!50!}
   ]
 
-  \begin{scope}[xshift=0 cm,yshift=0 cm]
+  \begin{scope}[xshift=0 cm,yshift=0 cm]%, scale = 0.3
 %
 %         LIAISONS
 %
-  \fill[color=gray,draw=gray!20!, ultra thin] % 
- (0.15, 0.9) rectangle (12.95, 2.2);
+ % \fill[color=gray,draw=gray!20!, ultra thin] % 
+ %(0.15, 0.9) rectangle (12.95, 2.2);
 
 %
 %     CORPS DE LA MOTRICE
@@ -51,113 +32,186 @@
  (4.5, 2.9) -- (5.75, 2.85) -- (5.85, 2.7) -- (-5.85, 2.7) -- 
  (-5.75, 2.85) -- (-4.5, 2.9) -- cycle;
 
-  \fill[beige] % 
- (5.85, 2.7) -- (5.9, 2.55) -- (-5.9, 2.55) --
- (-5.85, 2.7) --  cycle;
-  \fill[beige] % 
- (4.6, 2.7) -- (5.8, 2.05) -- (6.25, 1.95) -- (6.2, 0.95) -- 
- (-6.2, 0.95) -- (-6.25, 1.95) -- (-5.8, 2.05) -- (-4.6, 2.7) -- cycle;
+  \fill[beige,draw=gray!50!, ultra thin] % 
+ (5.85, 2.7) -- (5.9, 2.55) -- (5.8, 2.1) -- (6.25, 1.95) -- (6.32, 1.75)
+ -- (6.2, 0.95) --  (-6.2, 0.95) -- (-6.32, 1.75) -- (-6.25, 1.95)
+ -- (-5.8, 2.1) -- (-5.9, 2.55) -- (-5.85, 2.7) -- cycle;
 
   \fill[orange] % 
- (4.45, 2.55) -- (3.85, 1.8) -- (6.25, 1.75) -- (6.25, 1.6) -- (3.35, 1.6) -- (4.1, 2.4) 
- -- (-4.1, 2.4) -- (-3.35, 1.6) -- (-6.25, 1.6) -- (-6.25, 1.75) -- (-3.85, 1.8) -- (-4.45, 2.55) -- cycle;
+ (4.45, 2.55) -- (3.85, 1.8) -- (6.32, 1.75) -- (6.35, 1.6) -- (3.35, 1.6) -- (4.1, 2.4) 
+ -- (-4.1, 2.4) -- (-3.35, 1.6) -- (-6.27, 1.6) -- (-6.32, 1.75) -- (-3.85, 1.8) -- (-4.45, 2.55) -- cycle;
+
+  %  FEUX DROITE
+  \fill[color=gray!50!,draw=gray, ultra thin]
+ (6.3,1.7) rectangle (6.38, 1.6);
+  \fill[color=gray!50!,draw=gray, ultra thin]
+ (6.3,1.55) rectangle (6.38, 1.45);
+  \fill[color=brown!20!red!50!yellow!70!,draw=gray, ultra thin]
+ (6.2,1.7) -- (6.3, 1.7) -- (6.3, 1.4) -- (6.1, 1.4) -- cycle;
+  \fill[color=gray]
+ (6.23,1.4) rectangle (6.28, 1.2);
+  %  FEUX GAUCHE
+  \fill[color=gray!50!,draw=gray, ultra thin]
+ (-6.3,1.7) rectangle (-6.38, 1.6);
+  \fill[color=gray!50!,draw=gray, ultra thin]
+ (-6.3,1.55) rectangle (-6.38, 1.45);
+  \fill[color=brown!20!red!50!yellow!70!,draw=gray, ultra thin]
+ (-6.2,1.7) -- (-6.3, 1.7) -- (-6.3, 1.4) -- (-6.1, 1.4) -- cycle;
+  \fill[color=gray]
+ (-6.23,1.4) rectangle (-6.28, 1.2);
+
+ % GRILLE
+  \fill[color=gray!50!]
+ (3.2,1.6) -- (3.2, 2.4) -- 
+ (-3.2,2.4) -- (-3.2, 1.6) --  cycle;
+
+
+
+\foreach \t in {-1,1}
+{
+      % PARE BRISE ET GRIS AUTOUR
+      % gris
+  \fill[color=gray] % 
+ (\t*4.5, 2.55) -- (\t*5.9, 2.55) -- (\t*5.8, 2.1) -- (\t*4.15, 2.1) --  cycle;
+      % vitre
+  \shade[bottom color=gray!5!, top color=gray!90!, shading angle={90}, draw=black]
+ (\t*5.8, 2.54) -- (\t*5.87, 2.54) -- (\t*5.8, 2.12) -- (\t*5.6, 2.12) --  cycle;
+      % gris
+  \fill[color=gray] % 
+ (\t*4.5, 2.55) -- (\t*5.85, 2.55) -- (\t*5.65, 2.1) -- (\t*4.15, 2.1) --  cycle;
+      % PORTES
+    \draw[porteMotrice]
+ (\t*4.55, 1.3) rectangle (\t*5, 2.6);
+      % MARCHES
+    \draw[draw=gray!40!,very thin]
+ (\t*4.62, 1.03) rectangle (\t*4.93, 1.15);
+      % RAMPES
+    \draw[color=gray] (\t*4.5, 1.03) -- (\t*4.5, 2.3);
+    \draw[color=gray] (\t*5.05, 1.03) -- (\t*5.05, 2.3);
+
+  % FENÊTRE
+  \shade[bottom color=white, top color=black!80!, shading angle={90}]
+   (\t*4.65, 2.12) rectangle (\t*4.9, 2.52);
+}
+
+ % ESSIEUX 1
+
+\def\y{0.2}
+  \foreach \x in {3.64, -3.64}
+   {
+ \fill[gray] 
+  (\x - 0.65, 0.2) rectangle (\x + 0.65, 0.95);
+  }
 
 
 
 %  ROUES
-  \pic at (2.58,0)    {roue};
-  \pic at (4.7,0)    {roue};
-  \pic at (-4.7,0)    {roue};
-  \pic at (-2.58,0)    {roue};
- % ESSIEUX
+
+\def\hauteur{0.45}% de l'axe des roues
+\foreach \x in {2.58, 4.7, -4.7, -2.58}
+  {
+ % gris essieux : gray!20!brown!30!black!50!
+    \fill[gray!20!brown!20!black!60!] (\x, \hauteur) circle (0.45 cm);
+    \fill[gray!20!brown!40!black!40!] (\x, \hauteur) circle (0.41 cm);
+    \fill[gray!10!brown!30!black!60!] (\x, \hauteur) circle (0.38 cm);
+    % RESSORT
+  \foreach \t in {-1,1}
+  {
+     \draw[decorate, decoration={snake, segment length=1.5pt, amplitude=1.2mm}, black!70!, thick]
+       (\x + \t * 0.28, 0.7) -- (\x + \t * 0.28, 0.3);
+    % RESSORT fixation supérieur
+     \fill[gray!20!brown!20!black!60!]
+       (\x + \t * 0.28 - .13, 0.9) rectangle (\x + \t * 0.28 + .13, 0.7);
+  }
+  }
+
+
+ % ESSIEUX 2
+
 \def\y{0.2}
-  \foreach \x in {2.5, 15.05}
+  \foreach \x in {3.64, -3.64}
    {
- \fill[black!20!gray!70!,draw=gray!20!, ultra thin] 
-  (\x - 0.35, 0.2) rectangle (\x + 0.35, 0.45);
+\foreach \t in {-1,1}
+  {  %  montants supérieur
+    \coordinate (A) at (\x + \t*1.5, 0.95) ;
+    \coordinate (B) at (\x + \t*1.5, 0.85) ;
 
- \fill[black!20!gray!70!,draw=gray!20!, ultra thin] 
-  (\x - 0.45, 0.45) rectangle (\x + 0.45, 0.55);
+    \coordinate (C) at (\x + \t*1, 0.83) ;
+    \coordinate (D) at (\x + \t*0.65, 0.6) ;
 
- \fill[black!20!gray!70!,draw=gray!20!, ultra thin] 
-  (\x - 0.35, 0.55) rectangle (\x + 0.35, 0.7);
+    \coordinate (E) at (\x + \t*0.6, 0.4) ;
+    \coordinate (F) at (\x + \t*0.45, 0.4) ;
 
-    \coordinate (A) at (\x + -0.75,\y + 0.45) ;
-      \coordinate (B) at (\x - 0.2,\y + 0.2) ;
-      \coordinate (C) at (\x + 0.2,\y + 0.2) ;
-    \coordinate (D) at (\x + 0.75,\y + 0.45) ;
-    \coordinate (E) at (\x + 0.75,\y + 0.35) ;
-      \coordinate (F) at (\x + 0.2,\y + 0) ;
-      \coordinate (G) at (\x - 0.2,\y + 0) ;
-    \coordinate (H) at (\x - 0.75,\y + 0.35) ;
- \fill[black!20!gray!70!,draw=gray!20!, ultra thin] 
-    (A) to[out=0,in=180] (B) to[out=0,in=180] (C) to[out=0,in=180]
-    (D) to[out=-90,in=90] (E) to[out=180,in=0] (F) to[out=180,in=0]
-    (G) to[out=180,in=0] (H) -- cycle;
+    \coordinate (G) at (\x + \t*0.55, 0.95) ;
+ \fill[essieux] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (G) -- cycle;
+
+
+    %  montant inférieur
+    \coordinate (A) at (\x + \t * 1.5,0.4) ;
+    \coordinate (B) at (\x + \t * 1.5,0.35) ;
+
+    \coordinate (C) at (\x + \t * 1.2,0.3) ;
+    \coordinate (D) at (\x + \t * 1,0.3) ;
+
+    \coordinate (E) at (\x + \t * 0.80,0.32) ;
+
+    \coordinate (F) at (\x + \t * 0.65,0.2) ;
+    \coordinate (G) at (\x + \t * 0.65,0.4) ;
+ \fill[essieux] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (G) -- cycle;
+
+ \fill[essieux] (\x + \t*1.06, \hauteur) circle (0.17 cm);
+ \fill[grisEssieux]
+ (\x + \t*1.06 + 0.16, 0.4) rectangle (\x + \t*1.06 + -0.16, 0.32);
+ \fill[essieux]
+ (\x + \t*1.06 + 0.1, \hauteur + -0.1) rectangle (\x + \t*1.06 + -0.1, \hauteur + 0.1);
+    \fill[essieux] (\x + \t*1.06, \hauteur) circle (0.09 cm);
+    \fill[essieux] (\x + \t*1.06, \hauteur) circle (0.04 cm);
+
+  }
+
+    %  milieux
+  %(\x - 0.65, 0.2) rectangle (\x + 0.65, 0.95);
+    \coordinate (A) at (\x-0.22, 0.85) ;
+    \coordinate (B) at (\x + 0.22, 0.85) ;
+    \coordinate (C) at (\x + 0.3, 0.35) ;
+    \coordinate (D) at (\x - 0.3, 0.35) ;
+ \fill[essieux, rounded corners = 3pt] (A) -- (B) -- (C) -- (D) -- cycle;
+
+    %  milieux inférieur 
+  %(\x - 0.65, 0.2) rectangle (\x + 0.65, 0.95);
+    \coordinate (A) at (\x - 0.62,0.45) ;
+    \coordinate (B) at (\x + 0.62,0.45) ;
+    \coordinate (C) at (\x + 0.62,0.2) ;
+    \coordinate (D) at (\x - 0.62,0.2) ;
+ \fill[grisEssieux] (A) -- (B) -- (C) -- (D) -- cycle;
+
+\foreach \t in {-1,1}    % silent bloc
+  {
+  \fill[brown!30!black!80!]
+ (\x + \t * 0.38 - 0.1, 0.55) rectangle (\x + \t * 0.38 + 0.1, 0.35);
+  \fill[essieux]
+ (\x + \t * 0.38 - 0.1, 0.4) rectangle (\x + \t * 0.38 + 0.1, 0.25);
+  }
   }
 
 % BAS DE CAISSE
-  \coordinate (A) at (0.4,0.8) ;
-      \coordinate (B) at (17.1,0.8) ;
-
-      \coordinate (C) at (17.1,0.5) ;
-      \coordinate (D) at (16.05,0.5) ;
-
-      \coordinate (E) at (15.9,0.8) ;
-      \coordinate (F) at (13.9,0.8) ;
-
-      \coordinate (G) at (13.75,0.5) ;
-      \coordinate (H) at (3.8,0.5) ;
-
-      \coordinate (I) at (3.65,0.8) ;
-      \coordinate (J) at (1.60,0.8) ;
-
-      \coordinate (K) at (1.45,0.5) ;
-    \coordinate (L) at (0.4,0.5) ;
-
-  \fill[color=gray, rounded corners=1pt] % gris Foncé
-    (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) --
- (K) -- (L) -- cycle;
 
 
- % BUTOIR gauche  
-  \fill[color=gray,draw=gray!20!, ultra thin] % 
- (0.2, 0.65) rectangle (0.5, 0.8);
-  \fill[color=gray,draw=gray!20!, ultra thin] % 
- (0.15, 0.6) rectangle (0.2, 0.85);
- % BUTOIR droite  
-  \fill[color=gray,draw=gray!50!, ultra thin] % 
- (17.07, 0.65) rectangle (17.35, 0.8);
-  \fill[color=gray,draw=gray!20!, ultra thin] % 
- (17.35, 0.6) rectangle (17.4, 0.85);
+ % BUTOIR GAUCHE
+  \fill[color=gray!80!black] % 
+ (-6.1, 0.8) rectangle (-6.4, 0.95);
+  \fill[color=black!80!gray] % 
+ (-6.4, 0.75) rectangle (-6.45, 1);
 
-      % FENÊTRES
-  \foreach \t in {0, 1,..., 9}
-  \shade[bottom color=gray!5!, top color=gray!90!, shading angle={90},rounded corners=2pt, draw=white]
-   (2.1 + 1.35556*\t, 1.35) rectangle (3.1 + 1.35556*\t, 2.05);
-  \foreach \t in {0, 14.55}
-  \shade[bottom color=gray!5!, top color=gray!90!, shading angle={90},rounded corners=2pt, draw=white]
-   (1.15 + \t, 1.35) rectangle (1.75 + \t, 2.05);
-
-
-      % PORTES
-    \draw[rounded corners = 2pt,draw=gray,very thick] % marche
- (0.5, 0.35) rectangle (1.05, 0.6);
-    \draw[rounded corners = 2pt,draw=gray,very thick] % marche
- (16.45, 0.35) rectangle (17, 0.6);
-
-    \fill[porte]
- (0.45, 0.5) rectangle (1.1, 2.1);
-    \fill[porte]
- (16.4, 0.5) rectangle (17.05, 2.1);
-
-  \foreach \t in {0.55, 16.5} % fenêtre
-  \shade[bottom color=gray!5!, top color=gray!90!, shading angle={90},rounded corners=2pt, draw=black]
-   (\t, 1.4) rectangle (0.45 + \t, 2);
+ % BUTOIR DROIT
+  \fill[color=gray!80!black] % 
+ (6.1, 0.8) rectangle (6.4, 0.95);
+  \fill[color=black!80!gray] % 
+ (6.4, 0.75) rectangle (6.45, 1);
 
   % RAIL
   \shade[bottom color=brown!20!gray!60!black, top color=brown!20!gray!40!black]
- (0, 0) rectangle (17.5, -0.1);
+ (6.6, 0) rectangle (-6.6, -0.1);
 
   \end{scope}
 %
