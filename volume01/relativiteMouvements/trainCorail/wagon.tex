@@ -17,10 +17,10 @@
 %
 %         LIAISONS
 % 
-  \fill[color=gray,draw=gray!20!, ultra thin] % souflet gris
+  \fill[color=gray,draw=gray!20!, ultra thin] % fixation souflets
  (8.65, 0.9) rectangle (-8.65, 2.2);
 
- \draw[black!70!, very thick] 
+ \draw[black!70!, very thick] % liaison souple
     (8.3,0.65) to[out=330,in=180] (8.75,0.42);
  \draw[black!70!, very thick] 
     (-8.3,0.65) to[out=210,in=0] (-8.75,0.42);
@@ -28,7 +28,7 @@
   \foreach \t in {-1, 1}
   {
   \fill[color=black!80!,draw=gray!80!, ultra thin, rounded corners=2pt] % 
- (8.65 * \t, 0.9) rectangle (8.75 * \t, 2.3); % gris foncé, souflet
+ (8.65 * \t, 0.9) rectangle (8.75 * \t, 2.3); % gris foncé, souflets
 
     \coordinate (A) at (8.3 * \t,0.65) ;
     \coordinate (B) at (8.75 * \t,0.65) ;
