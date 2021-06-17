@@ -1,0 +1,80 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Matière et antimatière}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\subsection{Matière et antimatière}
+
+%L'équation de Schrödinger est symétrique par rapport au temps. Elle n'exclut pas l'existence de quanton remontant le temps. 
+L'équation de Dirac prévoit l'existence de quanton d'énergie "négative". Cette négativité de l'énergie sera par la suite réinterprétée comme étant des particules dont l'énergie est positive mais pour lesquelles le temps est "inversé". L'expérience a montré l'existence de ces particules que l'on appelle des anti-particules.
+
+Un anti-électron (appelé positron ou positon) possède la même masse qu'un électron et une charge opposée. Lorsqu'un électron rencontre un positron, ils s'anihilent, donnant un photon (dont l'énergie est égale à la somme des énergies de l'électron et du positron).
+
+Un autre fait expérimental observé est l'apparition d'électron et d'anti-électron à la suite de l'émission de photon dont l'énergie est supérieure à l'énergie de masse ($2\times m_ec^{\,2}$) de l'ensemble électron-positron.
+
+La flèche portée par le segment représentant un électron indique le "sens du temps". Ainsi, un anti-électron est simplement représenté par un segment fléché où la flèche remonte le temps par rapport à l'axe temporel du diagramme.
+
+Les diagrammes suivants, où l'axe du temps est maintenant représenté horizontalement, décrivent l'anihilation d'un électron et d'un positron, et la création d'un électron et d'un positron.
+
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+%\includegraphics[scale=2.5]{./diagrammes/electronPhotonAnihilation}
+\begin{tikzpicture}
+% désactive les caractères pour babel ? %\shorthandoff{:;!?};[scale=1.5]
+\begin{scope}[scale=0.7]
+%Création des axes xy
+    \draw[-latex, very thick] (0,0) -- (5,0) node[below] {temps};
+    \draw[-latex, very thick] (0,0) -- (0,5) node[left] {espace};
+% Définition des noeuds
+    \coordinate (e1) at (1,1);
+    \coordinate (e2) at (4,2);
+    \coordinate (e3) at (2,2.5);
+   \coordinate (e4) at (1.3,4);
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e3);
+\draw [electron, very thick] (e3) -- (e4);
+\draw [photon, very thick] (e3) -- (e2);
+% Nommage
+  \draw (e1) node [below] {1};
+  \draw (e2) node [right] {4};
+  \draw (e3) node [above right] {3};
+  \draw (e4) node [above] {2};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+Un électron en 1 et un positron en 2 se rencontre en 3, s'anihilent en donnant un photon qui se précipite en 4.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+%\includegraphics[scale=2.5]{./diagrammes/electronPhotonCreation}
+\begin{tikzpicture}
+\begin{scope}[scale=0.7]
+%Création des axes xy
+    \draw[-latex, very thick] (0,0) -- (5,0) node[below] {temps};
+    \draw[-latex, very thick] (0,0) -- (0,5) node[left] {espace};
+% Définition des noeuds
+    \coordinate (e1) at (0.8,2);
+    \coordinate (e2) at (2.5,2.5);
+    \coordinate (e3) at (3.7,1);
+   \coordinate (e4) at (3.3,4.3);
+% dessin des particules
+\draw [photon, very thick] (e1) -- (e2);
+\draw [electron, very thick] (e2) -- (e4);
+\draw [electron, very thick] (e3) -- (e2);
+% Nommage
+  \draw (e1) node [left] {1};
+  \draw (e2) node [above left] {2};
+  \draw (e3) node [right] {3};
+  \draw (e4) node [right] {4};
+%above, below, right, left,
+%au-dessus, en-dessous, à droite, à gauche
+\end{scope}
+\end{tikzpicture}
+\end{center}
+Un photon se déplace de 1 à 2. En 2, il se matérialise en un électron et un positron, ceux-ci se déplaçant vers 3 et 4.
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

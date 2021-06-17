@@ -1,0 +1,116 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Initiation au diagrammes de Feynman \cite{diagrammesFeynman}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\label{JeanLucDeziel}
+
+\subsection{Définition}
+
+Un diagramme de Feynman est généralement un graphe en 2 dimensions où l'un des axe est attribué à l'espace, l'autre au temps, et dans lequel on représente les interactions entre les particules élémentaires. 
+ %et dans lequel on représente les interactions entre les champs.
+
+%Les champs échangent de l'énergie entre eux de manière quantique, à travers les phénomènes de création (ou émission) et d'anihilation (ou absorption) des quantons.
+
+%On suppose que l'on dispose de dispositif expérimental permettant de détecter les particules.
+
+Une vision corpusculaire (granulaire) des quantons permet de se familiariser avec ces diagrammes. Les diagrammes représentent alors les "trajectoires" des quantons.
+
+L'électron et le photon sont des quantons. L'électron possède une masse ainsi qu'une charge électrique (il est l'un des principaux constituant de la matière avec le proton et le neutron). Le photon est la "particule de la lumière". Il n'a ni masse ni charge électrique et il se déplace à la vitesse de la lumière. Les interactions entre les électrons se produisent par échange de photon.
+
+
+\subsection{Exemple et conventions}
+
+Dans les diagrammes, un électron est représenté par un segment muni d'une flêche, un photon est représenté par un segment ondulé.
+
+Dans les diagrammes suivants, les chiffres 1, 2, 3 et 4 ont été rajoutés pour des raisons pédagogiques, ils facilitent les explications chronologique des diagrammes.
+\vspace{0.9cm}
+
+\tikzset{
+electron/.style={postaction={decorate}, decoration={markings,mark=at position .6 with {\arrow[#1]{latex}}}},
+%positon/.style={postaction={decorate}, decoration={markings,mark=at position .5 with {\arrow[#1]{latex}}}},
+photon/.style={decorate, decoration={snake, segment length=8pt, amplitude=1.8pt}}
+}
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+% désactive les caractères pour babel ? %\shorthandoff{:;!?};[scale=1.5]
+\begin{scope}[scale=0.7]
+%Création des axes xy
+    \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+    \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+    \coordinate (e1) at (1,1);
+    \coordinate (e2) at (4,2);
+    \coordinate (e3) at (2,2.5);
+   \coordinate (e4) at (1.3,4);
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e3);
+\draw [electron, very thick] (e3) -- (e4);
+\draw [photon, very thick] (e3) -- (e2);
+% Nommage
+  \draw (e1) node [below] {1};
+  \draw (e2) node [right] {2};
+  \draw (e3) node [above right] {3};
+  \draw (e4) node [above] {4};
+\end{scope}
+%above, below, right, left,
+%above left, above right, below left, below right
+%au-dessus, en-dessous, à droite, à gauche
+%au-dessus à gauche, au-dessus à droite, en-dessous à gauche, en-dessous à droite
+%
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+Explication chronologique :
+\end{center}
+Un électron se déplace de 1 à 3, un photon se déplace de 2 à 3. En 3, l'électron absorbe le photon. Muni de ce regain d'énergie, l'électron se précipite en 4.
+\end{minipage}
+
+
+\subsection{Interaction électromagnétique}
+
+Les électrons sont des particules chargés électriquement'interaction entre deux électrons
+
+%\vspace{1.1cm}
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+Explication chronologique :
+\end{center}
+Un électron se déplace de 1 à 3 tandis qu'un autre électron se déplace de 2 à 4.
+
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+% désactive les caractères pour babel ? %\shorthandoff{:;!?};
+\begin{scope}[scale=0.7]
+%Création des axes xy
+   \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+   \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+   \coordinate (e1) at (2,1);
+   \coordinate (e2) at (3.5,1);
+   \coordinate (e3) at (1,4);
+   \coordinate (e4) at (4,4);
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e3);
+\draw [electron, very thick] (e2) -- (e4);
+% Nommage
+  \draw (e1) node [left] {1};
+  \draw (e2) node [right] {2};
+  \draw (e3) node [left] {3};
+  \draw (e4) node [right] {4};
+\end{scope}
+%above, below, right, left,
+%above left, above right, below left, below right
+%au-dessus, en-dessous, à droite, à gauche
+%au-dessus à gauche, au-dessus à droite, en-dessous à gauche, en-dessous à droite
+%
+\end{tikzpicture}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,14 @@
+
+%https://www.physagreg.fr/schemas-figures-physique-svg-tikz.php#tikzelectromag
+
+
+\tikzstyle arrowstyle=[scale=1] %taille des flèches
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]%définition d'un trait avec une flèche en son milieu
+
+\begin{tikzpicture}
+\foreach \t in {30,60, ...,360} %boucle
+\draw[red,thick, directed] (0pt,0pt) -- (\t:3cm);%trait tracé en coordonnées polaires
+\fill circle (1mm) node [below right] {\colorbox{white}{+q}};%point central
+\end{tikzpicture}
+
