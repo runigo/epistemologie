@@ -1,0 +1,62 @@
+
+%https://www.physagreg.fr/schemas-figures-physique-svg-tikz.php#tikzelectromag
+
+\begin{tikzpicture}
+\useasboundingbox (-5,-4) rectangle (5,4); % découpe de la figure selon les dimensions
+\path (-3,0) coordinate (A); %attribution d'un nom à un point
+\path (3,0) coordinate (B);
+\path (-2,1) coordinate (C);
+\path (2,1) coordinate (D);
+
+\begin{scope} %application de style qu'à une partie de code
+\tikzstyle arrowstyle=[scale=1.5];%taille de flèche
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+mark=at position .52 with {\arrow[arrowstyle]{stealth}}}}] ;
+\draw[red,thick, directed] (A) .. controls (C) and (D) .. (B);%tracé de courbe de Bézier
+\draw[red,thick, directed] (A) .. controls +(1,2) and +(-1,2) .. (B);
+\draw[red,thick, directed] (A) .. controls +(1,3) and +(-1,3) .. (B);
+\draw[red,thick, directed] (A) .. controls +(1,4) and +(-1,4) .. (B);
+
+\draw[red,thick, directed] (A) .. controls (-2,-1) and (2,-1) .. (B);
+\draw[red,thick, directed, yscale=-1] (A) .. controls +(1,2) and +(-1,2) .. (B);%yscale permet de retourner verticalement la figure
+\draw[red,thick, directed][yscale=-1] (A) .. controls +(1,3) and +(-1,3) .. (B);
+\draw[red,thick, directed][yscale=-1] (A) .. controls +(1,4) and +(-1,4) .. (B);
+\end{scope}
+
+\begin{scope}
+\tikzstyle arrowstyle=[scale=1.5];
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .2 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .82 with {\arrow[arrowstyle]{stealth}}}} ]
+(A) .. controls +(1,8) and +(-1,8) .. (B);
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .15 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .87 with {\arrow[arrowstyle]{stealth}}}} ]
+(A) .. controls +(-3,10) and +(3,10) .. (B);
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .12 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .89 with {\arrow[arrowstyle]{stealth}}}} ] (A) .. controls +(-8,10) and +(8,10) .. (B);
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .08 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .94 with {\arrow[arrowstyle]{stealth}}}} ] (A) .. controls +(-15,10) and +(15,10) .. (B);
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .25 with {\arrow[arrowstyle]{stealth}}}}] (A) -- (-10,0);
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .25 with {\arrowreversed[arrowstyle]{stealth}}}}] (B) -- (10,0);
+
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .2 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .82 with {\arrow[arrowstyle]{stealth}}}} ][yscale=-1] (A) .. controls +(1,8) and +(-1,8) .. (B);
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .15 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .87 with {\arrow[arrowstyle]{stealth}}}} ][yscale=-1] (A) .. controls +(-3,10) and +(3,10) .. (B);
+\draw[red,thick,postaction={decorate,decoration={markings,
+mark=at position .12 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .89 with {\arrow[arrowstyle]{stealth}}}} ][yscale=-1] (A) .. controls +(-8,10) and +(8,10) .. (B);
+\draw[red,thick, postaction={decorate,decoration={markings,
+mark=at position .08 with {\arrow[arrowstyle]{stealth}}}},postaction={decorate,decoration={markings,
+mark=at position .94 with {\arrow[arrowstyle]{stealth}}}} ][yscale=-1] (A) .. controls +(-15,10) and +(15,10) .. (B);
+\end{scope}
+\fill (A) circle (1mm) node [below left] {\colorbox{white}{+q}};%Charge
+\fill (B) circle (1mm) node [below right] {\colorbox{white}{-q}};
+\end{tikzpicture} 
