@@ -1,7 +1,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Initiation au diagrammes de Feynman \cite{diagrammesFeynman}}
+\section{Initiation au diagrammes de Feynman}
+%\section{Initiation au diagrammes de Feynman \cite{diagrammesFeynman}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -70,49 +71,76 @@ photon/.style={decorate, decoration={snake, segment length=8pt, amplitude=1.8pt}
 Explication chronologique :
 \end{center}
 Un électron se déplace de 1 à 3, un photon se déplace de 2 à 3. En 3, l'électron absorbe le photon. Muni de ce regain d'énergie, l'électron se précipite en 4.
+
+%Un électron se déplace dans l'espace vers la droite, de 1 à 3, un photon se déplace de 2 à 3. En 3, l'électron absorbe le photon. Muni de ce regain d'énergie, l'électron se précipite en 4.
 \end{minipage}
 
 
 \subsection{Interaction électromagnétique}
 
-Les électrons sont des particules chargés électriquement'interaction entre deux électrons
+Dans le paradigme de la théorie quantique des champs, la classique force de coulomb est remplacé par un échange de photon entre les électrons.
 
 %\vspace{1.1cm}
 \begin{minipage}[c]{.45\linewidth}
 \begin{center}
-Explication chronologique :
+Modèle classique de la force de coulomb
 \end{center}
-Un électron se déplace de 1 à 3 tandis qu'un autre électron se déplace de 2 à 4.
+Deux électrons sont immobiles en 1 et en 2. Ils se repoussent,se mettant alors en mouvement, en s'éloignant l'un de l'autre au cours du temps.
 
 \end{minipage}
 \hfill
 \begin{minipage}[c]{.45\linewidth}
 \begin{tikzpicture}
-% désactive les caractères pour babel ? %\shorthandoff{:;!?};
 \begin{scope}[scale=0.7]
 %Création des axes xy
    \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
    \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
 % Définition des noeuds
-   \coordinate (e1) at (2,1);
-   \coordinate (e2) at (3.5,1);
-   \coordinate (e3) at (1,4);
-   \coordinate (e4) at (4,4);
+   \coordinate (e1) at (2,1);   \coordinate (e2) at (3,1);
+   \coordinate (e3) at (1,4);   \coordinate (e4) at (4,4);
 % dessin des particules
-\draw [electron, very thick] (e1) -- (e3);
-\draw [electron, very thick] (e2) -- (e4);
+\draw [electron, very thick] (e1) -- (e3); \draw [electron, very thick] (e2) -- (e4);
 % Nommage
-  \draw (e1) node [left] {1};
-  \draw (e2) node [right] {2};
-  \draw (e3) node [left] {3};
-  \draw (e4) node [right] {4};
+  \draw (e1) node [left] {1};  \draw (e2) node [right] {2};
+  \draw (e3) node [left] {3};  \draw (e4) node [right] {4};
 \end{scope}
+\end{tikzpicture}
+\end{minipage}
+
+\vspace {.7cm}
+
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+\begin{scope}[scale=0.7] %                  UN PHOTON
+%Création des axes xy
+   \draw[-latex, very thick] (0,0) -- (5,0) node[below] {espace};
+   \draw[-latex, very thick] (0,0) -- (0,5) node[left] {temps};
+% Définition des noeuds
+   \coordinate (e1) at (2,1);   \coordinate (e2) at (3,1);   \coordinate (e5) at (2,2.4);
+   \coordinate (e3) at (1,4);   \coordinate (e4) at (4,4);   \coordinate (e6) at (3,2.6);
+% dessin des particules
+\draw [electron, very thick] (e1) -- (e5); \draw [electron, very thick] (e5) -- (e3);
+\draw [electron, very thick] (e2) -- (e6); \draw [electron, very thick] (e6) -- (e4);
+\draw [photon, very thick] (e6) -- (e5);
+% Nommage
+  \draw (e1) node [left] {1};  \draw (e2) node [right] {2};
+  \draw (e3) node [left] {3};  \draw (e4) node [right] {4};
+\end{scope}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+Modèle quantique d'échange de photons
+\end{center}
+Deux électrons sont immobile en 1 et en 2. Un instant plus tard, le premier électron se met en mouvement en émetant un photon. Ce photon est absorbé par le deuxième électron qui se met alors en mouvement. Le mouvement des électrons les conduit à s'éloigner l'un de l'autre.
+
+\end{minipage}
+\vspace {.7cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %above, below, right, left,
 %above left, above right, below left, below right
 %au-dessus, en-dessous, à droite, à gauche
 %au-dessus à gauche, au-dessus à droite, en-dessous à gauche, en-dessous à droite
 %
-\end{tikzpicture}
-\end{minipage}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
