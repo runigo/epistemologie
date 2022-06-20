@@ -3,22 +3,55 @@
 \section{Champ électrostatique}
 %%%%%%%%%%%%%%%%%%%%%
 %
-%\subsection{Définition}
-L'expérience du pendule électrostatique peut se modéliser par des {\it forces électrostatiques} s'exerçant entre les particules chargées. Ce modèle suppose une {\it action à distance}. La notion de champs permet de modéliser cette action entre les charges électriques : une charge électrique crée un champ dans tout l'espace. Le champ exercent une force sur les charges électriques.
+\subsection{Modèle}
+Le champ électrostatique est un intermédiaire entre la présence d'une charge électrique $Q_1$ et la force exercé par celle-ci sur une charge électrique $Q_2$ :
+%L'expérience du pendule électrostatique peut se modéliser par des {\it forces électrostatiques} s'exerçant entre les particules chargées. Ce modèle suppose une {\it action à distance}.
+%La notion de champs permet de modéliser cette action entre les charges électriques : une . Le champ exerce une force sur les charges électriques.
+
+\begin{itemize}[leftmargin=2.3cm, label=\ding{32}, itemsep=5pt]
+\item La charge électrique $Q_1$ crée un champ électrique dans tout l'espace.
+\item Le champ électrique exerce une force sur la charge électrique $Q_2$.
+\end{itemize}
+
+\subsection{Représentation mathématique}
+Une charge électrique $Q_1$ crée un champ électrique $\overrightarrow{E}$ dans tout l'espace. 
 
 \begin{center}
-Vision "Champ électrique"
+
+\tikzstyle arrowstyle=[scale=1] %taille des flèches
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]%définition d'un trait avec une flèche en son milieu
+
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+Représentation des lignes de champs : le champ électrique est un vecteur ($\overrightarrow{E}$) qui dépend de la position par rapport à la charge électrique.
 \end{center}
-Une charge électrique $Q_1$ crée un champ électrique $\overrightarrow{E}$ dans tout l'espace.
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+\foreach \t in {30,60, ...,360} %boucle
+\draw[red,thick, directed] (0pt,0pt) -- (\t:3cm);%trait tracé en coordonnées polaires
+\fill circle (1mm) node [below right] {\colorbox{white}{+q}};%point central
+\end{tikzpicture}
+\end{minipage}
 
-\begin{center}
+
 \setlength{\unitlength}{1cm}
+\begin{minipage}[c]{.45\linewidth}
 \begin{picture}(10,3)
 \put(0.5,1.0){\circle{0.3}}
 \put(0.3,0.3){$Q_1$}
 \put(5.5,1.0){\vector(-1,0){1.36}}
 \put(3.7,1.3){$\overrightarrow{E}$}
 \end{picture}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\end{center}
+\end{minipage}
+
 \end{center}
 
 Le champ électrique $\overrightarrow{E}$ exerce une force $\overrightarrow{F}_{\overrightarrow{E}/Q_2}$ sur la charge électrique $Q_2$
