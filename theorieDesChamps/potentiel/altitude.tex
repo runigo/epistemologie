@@ -3,42 +3,73 @@
 \section{Pente et altitude}
 %%%%%%%%%%%%%%%%%%%%%
 %
-Afin de représenter le relief sur une carte en 2 dimension, les lignes de niveaux sont habituellement utilisées. Il existe néanmoins une autre représentation : le champs de pente. Il s'agit d'un champ vectoriel, en chaque point de la carte, on représente la pente par un vecteur dirigé dans le sens de la pente et dont la longueur est proportionnel à la pente (d'autant plus grande que la pente est grande)
+Le paysage ci-dessous est constitué de deux collines. La colline de gauche possède un coté très pentu. La colline de droite est moins haute. Un village se trouve à proximité du col.
 
-\vspace{0.97cm}
-\begin{minipage}{0.45\textwidth}
-Considérons le relief ci-contre, constitué de deux collines, représenté en coupe. La première colline, de sommet B possède un coté très pentu (point A). La seconde est moins haute (sommet F). Entre les deux, le col se trouve en D.
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth}
+\vfill
 \begin{center}
 \includegraphics[scale=0.7]{./potentiel/collines}
 \end{center}
-\end{minipage}
 
-\vspace{0.97cm}
-\begin{minipage}{0.45\textwidth}
+\vfill
+Comment représenter ce paysage, qui est un relief en 3 dimensions, sur une carte en 2 dimensions ?
+
+Nous allons voir deux façons de représenter ce relief : 
+
+\vfill
+\begin{minipage}[c]{.45\linewidth}
+{\bf Les lignes de niveau} : c'est un champ scalaire (que l'on apellera champ d'altitude), donnant l'altitude du point considéré.
+
+{\bf Les vecteurs "pente"} : c'est un champ vectoriel (que l'on apellera champ de pente), donnant la direction et l'importance de la pente (les vecteurs rouges ci-contre en donnent quelques exemples).
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
 \begin{center}
-\includegraphics[scale=0.7]{./potentiel/potentiel}
+\includegraphics[scale=0.4]{./potentiel/altitude}
 \end{center}
 \end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth}
-On représente ici les deux collines grâce à des lignes de niveau. Ces lignes sont plus proche les unes des autres au point A.
-\end{minipage}
 
-\vspace{0.97cm}
-\begin{minipage}{0.45\textwidth}
-Enfin on représente ici le "champ de pente", au point A la pente est forte, aux points B, D et F la pente est nulle.
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth}
+\vfill
+\newpage
+%Sur une carte topographique, les lignes de niveaux sont utilisées. Alors que la surface de la terre est en 3 dimensions, 
+%Une carte routière en 2 dimensions montre une vue de dessus suffisante. Sur une carte topographique, l'altitude est représenté en plus de la vue de dessus grâce aux lignes de niveau.
+
+\subsection{"Champ d'altitude"}
+
+Sur une carte topographique, le relief est représenté par des lignes de niveau, des lignes de même altitude.
+
+Sur le schéma suivant, le paysage précédent est représenté vu de dessus. Son relief y est représenté à l'aide des lignes de niveau.
+
+Les points d'altitudes 300 m, 350 m , et 400 m se trouve sur les lignes en gras en gras, les lignes en trait fin indiquent les points d'altitudes intermédiaires multiple de 10 (310 m, 320 m, 330 m, etc...)
+
+%\vfill
+\begin{center}
+\includegraphics[scale=0.6]{./potentiel/potentiel}
+\end{center}
+
+%\vfill
+
+En chaque point de la carte, on peut lire l'altitude en s'aidant des lignes de niveau (Le village se trouve à une altitude d'environ 295 m). Les lignes de niveau représentent donc un champ (le "champ d'altitude") dans un espace a 2 dimension (la carte), il s'agit d'un champ scalaire (l'altitude est un nombre).
+
+Ces lignes sont plus proches les unes des autres lorsque la pente est plus forte.
+
+%Nous allons voir qu'il existe une autre représentation du relief : le "champs de pente".
+
+\vfill
+\newpage
+\subsection{"Champ de pente"}
+
+Le "champs de pente" est un champ vectoriel, en chaque point de la carte, on représente la pente par un vecteur dirigé dans le sens de la pente et dont la longueur est proportionnel à la pente (d'autant plus grande que la pente est grande).
+
+Le schéma ci-dessous représente le "vecteur pente" en quelques points de la carte. On constate que celui-ci est "grand" dans la zone pentu de la colline de gauche.
+
+%\vfill
 \begin{center}
 \includegraphics[scale=0.7]{./potentiel/vecteur}
 \end{center}
-\end{minipage}
 
-\vspace{0.97cm}
+%\vfill
 On remarque alors que le vecteur "champs de pente" est perpendiculaire au ligne de niveau du champs "d'altitude".
 
+\vfill
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
