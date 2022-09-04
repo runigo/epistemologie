@@ -1,0 +1,66 @@
+
+%%%%%%%%%%%%%%%%%%%%%
+\chapter{Électromagnétisme}
+%%%%%%%%%%%%%%%%%%%%%
+
+{\footnotesize
+D'après https://glq2200.clberube.org/chapitres/docs/mag-theorie-maxwell
+}
+
+\section{Loi de Faraday}
+Un champ électrique (courant) est induit le long de boucles qui entourent la surface traversée par un champ magnétique variable dans le temps.
+
+Forme différentielle:
+
+\[
+\nabla \times \boldsymbol{E} = - \frac{\partial{\boldsymbol{B}}}{\partial{t}}\]
+
+Forme intégrale:
+
+\[
+\oint \boldsymbol{E} \cdot \mathrm{d}\boldsymbol{l} = -\frac{\mathrm{d}}{\mathrm{d}t} \iint_S \boldsymbol{B}\cdot \mathrm{d}\boldsymbol{S}
+\]
+
+\section{Loi d’Ampère}
+Un courant qui perce une surface génère un champ magnétique qui tourne autour de celle-ci.
+
+Forme différentielle :
+
+\[
+\nabla \times \boldsymbol{B} = \mu_0 \left( \boldsymbol{J} + \epsilon_0 \frac{\partial{\boldsymbol{E}}}{\partial{t}} \right)
+\]
+
+
+Forme intégrale :
+\[\oint \boldsymbol{B} \cdot \mathrm{d}\boldsymbol{l} = \mu_0 \iint_S \boldsymbol{J}\cdot\mathrm{d}\boldsymbol{S} + \mu_0 \epsilon_0 \frac{\mathrm{d}}{\mathrm{d}t} \iint_S \boldsymbol{E}\cdot \mathrm{d}\boldsymbol{S}\]
+Version macroscopique :
+\[\oint \boldsymbol{H} \cdot \mathrm{d}\boldsymbol{l} = \iint_S \left( \boldsymbol{J} + \frac{\partial\boldsymbol{D}}{\partial t} \right) \cdot \mathrm{d}\boldsymbol{S}\]
+
+\section{Loi de Gauss}
+Le champ électrique qui sort d’une surface fermée est proportionnel à la charge contenue dans le volume.
+
+Forme différentielle :
+\[\nabla \cdot \boldsymbol{E} = \frac{\rho}{\epsilon_0}\]
+Forme intégrale :
+\[\iint_{S} \boldsymbol{E} \cdot \mathrm{d}\boldsymbol{S} = \frac{1}{\epsilon_0} \iiint_V \rho \,\mathrm{d}V\]
+Version macroscopique :
+\[\iint_{S} \boldsymbol{D} \cdot \mathrm{d}\boldsymbol{S} = \iiint_V \rho_f \,\mathrm{d}V\]
+
+\section{Loi de Gauss pour le magnétisme}
+Le champ magnétique qui sort d’une surface fermée est toujours nul. Il n’y a pas de «charges» magnétiques dans le volume ainsi formé (les monopôles magnétiques n’existent pas).
+
+Forme différentielle :
+\[\nabla \cdot \boldsymbol{B} = 0\]
+Forme intégrale :
+\[\iint_{S} \boldsymbol{B} \cdot\mathrm{d}\boldsymbol{S} = 0\]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Équation de Maxwell}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

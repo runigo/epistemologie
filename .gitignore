@@ -41,4 +41,14 @@ theorieDesChamps/document.log
 theorieDesChamps/document.out
 theorieDesChamps/document.pdf
 theorieDesChamps/document.toc
-
+.gitignore
+theorieDesChamps/potentiel/altitude.jpg
+theorieDesChamps/potentiel/collines.jpg
+theorieDesChamps/potentiel/potentiel.jpg
+theorieDesChamps/potentiel/vecteur.jpg
+theorieDesChamps/quantique/hydrogene.jpg
+theorieDesChamps/theorieDesChamps.pdf
+theorieDesChamps/champs/pomme2.jpg
+theorieDesChamps/champs/pommeG2.jpg
+theorieDesChamps/champs/pommier2.jpg
+theorieDesChamps/champs/pommierG2.jpg
