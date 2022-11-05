@@ -1,0 +1,56 @@
+%https://physagreg.fr/schemas-figures-physique-svg-tikz.php
+\begin{tikzpicture} [scale=0.75, decoration={coil,aspect=0.4,segment length=3mm,amplitude=3mm}]
+%decoration : gère l'aspect du ressort par l'instruction decorate
+\tikzset{ressort/.style={thick,gray,smooth}} %définition d'un style de ressort
+
+\draw [dashed] (2,-4.5) --++ (4,0);
+\draw node [left] at (2,-4.5) {O};
+\draw [->] (2,-4.5) --++ (0,-2) node [left] {$x$};
+\draw [dashed] (2,-5.5) --++ (4,0) ;
+\draw node [left] at (2,-5.5) {$x(t)$} ;
+
+%ressort
+\begin{scope}
+\draw[ressort,decorate] (0,-0.3)--(0,-3) ;
+\draw[thick,gray] (0,0) -- (0,-0.3);
+\fill [pattern=north east lines] (-0.5,0) rectangle (0.5,0.3); %bloc qui tient le ressort
+\draw[thick] (-0.5,0) -- (0.5,0); %bloc qui tient le ressort
+%fin ressort
+\draw[line width=0.5pt,<->,>=triangle 45](-0.8,0) -- (-0.8,-3) node [midway,left] {$l_{\text{\bf 0}}$} ;
+\end{scope}
+
+\begin{scope}[xshift=3cm]%Décalage horizontale de 3 cm
+\draw[ressort,decorate] (0,-0.3)--(0,-4) ;
+
+%bloc qui tient le ressort
+\draw[thick,gray] (0,0) -- (0,-0.3); \fill [pattern=north east lines] (-0.5,0) rectangle (0.5,0.3); \draw[thick](-0.5,0)--(0.5,0); %fin ressort
+
+\draw[line width=0.5pt,<->,>=triangle 45](-0.8,0) -- (-0.8,-4.1) 
+node [midway,left] {$l_{\text{\bf éq}}$} ;
+\draw [thick](0,-4)--(0,-4.5);
+\draw [rounded corners=4pt,color=white,ball color=gray,smooth] (0,-4.5) circle (0.4) ;
+
+\draw [very thick,-latex] (0,-4.5)--++(0,-1.5) node [midway,right=0.25cm] {$\overrightarrow{P}$};
+\draw [very thick,-latex] (0,-4.15)--(0,-2.9) 
+node [midway,right=0.25cm] {$\overrightarrow{T_{\text{\bf éq}}}$};
+\end{scope}
+
+\begin{scope}[xshift=6cm]
+\draw[ressort,decorate] (0,-0.3)--(0,-5) ;
+
+%bloc qui tient le ressort
+\draw[thick,gray] (0,0) -- (0,-0.3); \fill [pattern=north east lines] (-0.5,0) rectangle (0.5,0.3);
+%pattern définit un style de remplissage de la forme
+\draw[thick](-0.5,0)--(0.5,0); %fin ressort
+
+\draw[line width=0.5pt,<->,>=triangle 45](-0.8,0) -- (-0.8,-5.1) node [midway,left] {$l(t)$} ;
+\draw [thick](0,-5)--(0,-5.5);
+\draw [rounded corners=4pt,color=white,ball color=gray,smooth] (0,-5.5) circle (0.4) ;
+
+%rounded corners = coins arrondis de tant de points
+%ball color = style de forme
+
+\draw [very thick,-latex] (0,-5.5)--++(0,-1.5) node [midway,above=0.1cm,right=0.25cm] {$\overrightarrow{P}$};
+\draw [very thick,-latex] (0,-5.15)--(0,-3.25) node [midway,right=0.25cm] {$\overrightarrow{T}$};
+\end{scope}
+\end{tikzpicture} 
