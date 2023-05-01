@@ -14,9 +14,11 @@
 %pour gérer les positionnement d'images
 \usepackage{float}
 \usepackage{amsmath}
-\DeclareMathOperator{\dt}{dt}
+\usepackage{amssymb}
 \usepackage{amsfonts}
+\DeclareMathOperator{\dt}{dt}
 \usepackage{graphicx}
+%\usepackage{tabularx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{url}
 
@@ -57,11 +59,7 @@
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
-\usetikzlibrary{decorations.pathmorphing,calc,shapes,shapes.geometric,patterns}
-\usetikzlibrary{calc,intersections}
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{arrows.meta,arrows}
-\usetikzlibrary{decorations}
+%\usetikzlibrary{decorations}
 \usetikzlibrary{angles, quotes}
 \usepackage{verbatim}
 
@@ -89,23 +87,19 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %pdfcreator = {MikTeX},% Logiciel qui a crée le document
 %pdfproducer = {} % Société avec produit le logiciel
 
+%======================== DEFINITION COMMANDES ========================
+\newcommand{\fsb}[1]{\textsf{\textbf {\footnotesize #1}}}
+\newcommand{\bi}[1]{\textbf{\textit {#1}}}
+\newcommand{\lb}{$\lozenge$}
+\newcommand{\bl}{$\blacklozenge$}
 %======================== DEBUT DU DOCUMENT ========================
 %
 \begin{document}
-%
-%régler l'espacement entre les lignes
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-%
-% Titre, résumé, ... %
-\input{./presentation/presentation.tex}
 %
 % Table des matières
 \tableofcontents
 \thispagestyle{empty}
 \setcounter{page}{0}
-%
-%espacement entre les lignes des tableaux
-\renewcommand{\arraystretch}{1.5}
 %
 %====================== INCLUSION DES CHAPITRES ======================
 %
@@ -114,14 +108,8 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %recommencer la numérotation des pages à "1"
 \setcounter{page}{0}
 \newpage
-%\input{./systemeEtGrandeurs/systemeEtGrandeurs.tex}
-%\input{./operateursEtVecteurs/operateursEtVecteurs.tex}
-%\input{./systemeQuantique/systemeQuantique.tex}
-%
-\input{./relativite/relativite.tex}
-\input{./phenomene/phenomene.tex}
-\input{./noumene/noumene.tex}
-%\input{./annexe/annexe.tex}
+\input{./larousse.tex}
+\input{./robert.tex}
 %
 %====================== INCLUSION DE LA BIBLIOGRAPHIE ======================
 %
