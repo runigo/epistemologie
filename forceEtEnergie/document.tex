@@ -90,8 +90,9 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %======================== DEFINITION COMMANDES ========================
 \newcommand{\fsb}[1]{\textsf{\textbf {\footnotesize #1}}}
 \newcommand{\bi}[1]{\textbf{\textit {#1}}}
-\newcommand{\lb}{$\lozenge$}
-\newcommand{\bl}{$\blacklozenge$}
+\newcommand{\si}[1]{\textsf{\textit {#1}}}
+\newcommand{\lb}{$\lozenge$\ }
+\newcommand{\bl}{$\blacklozenge$\ }
 %======================== DEBUT DU DOCUMENT ========================
 %
 \begin{document}
@@ -108,8 +109,8 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %recommencer la numérotation des pages à "1"
 \setcounter{page}{0}
 \newpage
-\input{./larousse.tex}
-\input{./robert.tex}
+\input{./dictionnaires/dictionnaires.tex}
+\input{./annexe/annexe.tex}
 %
 %====================== INCLUSION DE LA BIBLIOGRAPHIE ======================
 %
