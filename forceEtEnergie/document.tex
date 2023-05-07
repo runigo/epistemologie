@@ -97,6 +97,8 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %
 \begin{document}
 %
+% Titre, résumé, ... %
+\input{./presentation/presentation.tex}
 % Table des matières
 \tableofcontents
 \thispagestyle{empty}
@@ -109,6 +111,7 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %recommencer la numérotation des pages à "1"
 \setcounter{page}{0}
 \newpage
+\input{./histoire/histoire.tex}
 \input{./dictionnaires/dictionnaires.tex}
 \input{./annexe/annexe.tex}
 %
