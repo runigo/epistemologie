@@ -1,0 +1,24 @@
+
+\begin{appendix}
+
+\chapter{Dérivée et intégrale}
+
+\begin{tikzpicture}
+\draw[->] (0,-2) -- (0,2) node[right] {$\int\!\!f(x)$};
+\draw[color=red,domain=-3:3,samples=100] plot ({\x},{0.9+0.6*rad(atan(2*\x))});
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\end{tikzpicture} 
+
+\begin{tikzpicture}
+\draw[->] (0,-2) -- (0,2) node[right] {$f(x)$};
+%\draw[color=red,domain=-3:3,samples=100] plot ({\x},{exp(-0.5*\x*\x))});
+\draw[color=red,domain=-3:3,samples=100] plot ({\x},{1/(1+\x*\x)});
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\end{tikzpicture} 
+
+\begin{tikzpicture}
+\draw[->] (0,-2) -- (0,2) node[right] {$f'(x)$};
+\draw[color=red,domain=-3:3,samples=100] plot ({\x},{-2*\x/(1+\x*\x)/(1+\x*\x))});
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\end{tikzpicture} 
+\end{appendix}
