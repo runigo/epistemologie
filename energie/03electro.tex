@@ -13,7 +13,7 @@
 \draw [very thick] (0,0) node [above]{G} circle(0.7);
 \draw [->, very thick] (1,1) -- (-1,1) node [above]{U};
 \draw [thick] (-1,3) -- (-2,3) -- (-2,0) -- (2,0) -- (2,3) -- (1,3);
-\draw [very thick] (-1,3.3) -- (-1,2.7) -- (1,2.7) -- (1,3.3) -- cycle;
+\draw [very thick, green] (-1,3.3) -- (-1,2.7) -- (1,2.7) -- (1,3.3) -- cycle;
 \draw (0,3) node {R};
 \draw [very thick] (2.3,1.7) node [below right]{I} -- (2,1.4) -- (1.7,1.7);
 \end{tikzpicture}
@@ -28,12 +28,12 @@ Le conducteur ohmique R est cylindrique (longueur {\it l}, section {\it s}). La 
 
 \begin{center}
 \begin{tikzpicture}
-\draw[thick] (0,0) ellipse (0.3cm and 0.7cm);
-\draw (0,0.7) -- (10,0.7);
-\draw (0,-0.7) -- (10,-0.7);
+\draw[thick, green] (0,0) ellipse (0.3cm and 0.7cm);
+\draw[thick, green] (0,0.7) -- (10,0.7);
+\draw[thick, green] (0,-0.7) -- (10,-0.7);
 \draw [thick,->] (10,-1.4) -- (0,-1.4) node [left] {U};
 \fill (5,0) -- (4.3,0.7) -- (4.7,0) -- (4.3,-0.7) -- cycle node [right] {I};
-\draw (10,0.7) .. controls (10.5,0.7) and (10.5,-0.7) .. (10,-0.7);
+\draw[thick, green] (10,0.7) .. controls (10.5,0.7) and (10.5,-0.7) .. (10,-0.7);
 \end{tikzpicture}
 \end{center}
 
@@ -68,5 +68,97 @@ Soumis à une force de la part du champ électrique, les électrons libres sont 
 
 Le courant I produit un champ magnétique : Les lignes de champs sont des cercles, centré sur l'axe du conducteur, le champ est perpendiculaire à cet axe.
 
+\vspace{0.5cm}
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\begin{tikzpicture}
+\draw [thick, green] (2,0.7) -- (8,0.7);
+\draw [thick, green] (8,-0.7) -- (2,-0.7);
+\fill (5,0) -- (4.3,0.7) -- (4.7,0) -- (4.3,-0.7) -- cycle node [right] {I};
+\draw (5,2) circle(0.5);
+\fill (5,2) circle(0.05);
+\draw (6,2) node {$\overrightarrow{\mt{B}}$};
+\draw (5,-2) circle(0.5);
+\draw (5.35,-2.35) -- (4.65,-1.65);
+\draw (5.35,-1.65) -- (4.65,-2.35);
+\draw (6,-2) node {$\overrightarrow{\mt{B}}$};
+\end{tikzpicture}
 
+Vue dans un plan parallèle à l'axe du conducteur
+\end{center}
+\end{minipage}
+\hfill
+\tikzstyle{fleche}=[->,line width=3pt]
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\begin{tikzpicture}
+\draw[thick, green] (0,0) circle(0.7);
+\draw (0,0) circle(0.5);
+\draw (0.35,0.35) -- (-0.35,-0.35);
+\draw (-0.35,0.35) -- (0.35,-0.35);
+\draw (1,0) node {$\overrightarrow{\mt{I}}$};
+\draw [fleche] (0,2) -- (1.5,2) node [right] {$\overrightarrow{\mt{B}}$};
+\draw [fleche] (0,-2) -- (-1.5,-2) node [left] {$\overrightarrow{\mt{B}}$};
+\end{tikzpicture}
+
+Vue dans un plan perpendiculaire à l'axe du conducteur
+\end{center}
+\end{minipage}
+
+\vspace{0.5cm}
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+\begin{tikzpicture}
+\draw[thick, green] (0,0) circle(2.7);
+\draw[thin, gray] (0,0) circle(0.5);
+\draw[thin, gray] (0.35,0.35) -- (-0.35,-0.35);
+\draw[thin, gray] (-0.35,0.35) -- (0.35,-0.35);
+\draw (1,0) node[color=gray] {$\overrightarrow{\mt{I}}$};
+\draw [fleche] (0,2) -- (1.5,2) node [right] {$\overrightarrow{\mt{B}}$};
+\draw [fleche] (0,1) -- (0.75,1) node [right] {$\overrightarrow{\mt{B}}$};
+\draw [fleche] (0,-2) -- (-1.5,-2) node [left] {$\overrightarrow{\mt{B}}$};
+\draw [fleche] (0,-1) -- (-0.75,-1) node [left] {$\overrightarrow{\mt{B}}$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hfill
+\tikzstyle{fleche}=[->,line width=3pt]
+\begin{minipage}[c]{.45\linewidth}
+À l'intérieur du conducteur, le champ magnétique est nul sur l'axe, son amplitude augmente en s'écartant de l'axe :
+\end{minipage}
+\vspace{0.5cm}
+
+\vspace{0.5cm}
+\begin{minipage}[c]{.45\linewidth}
+On constate que le champ magnétique est perpendiculaire au champ électrique. On en déduit le sens et la direction du vecteur de Poyting :
+\end{minipage}
+\hfill
+\tikzstyle{fleche}=[->,line width=3pt]
+\begin{minipage}[c]{.45\linewidth}
+\begin{tikzpicture}
+\draw[thick, green] (0,0) circle(3);
+\draw [fleche] (0,3) -- (0,1.5) node [right] {$\overrightarrow{\mt{P}}$};
+\draw [fleche] (3,0) -- (1.5,0) node [left] {$\overrightarrow{\mt{P}}$};
+\draw [fleche] (0,-3) -- (0,-1.5) node [left] {$\overrightarrow{\mt{P}}$};
+\draw [fleche] (-3,0) -- (-1.5,0) node [right] {$\overrightarrow{\mt{P}}$};
+\draw [fleche] (-1.5,-1.5) -- (-1,-1);
+\draw [fleche] (1.5,1.5) -- (1,1);
+\draw [fleche] (-1.5,1.5) -- (-1,1);
+\draw [fleche] (1.5,-1.5) -- (1,-1);
+%\draw [fleche] (1.5,1.5) -- (1.5,0) node [right] {$\overrightarrow{\mt{P}}$};
+%\draw [fleche] (1.5,1.5) -- (0,-1.5) node [left] {$\overrightarrow{\mt{P}}$};
+%\draw [fleche] (1.5,1.5) -- (-1.5,0) node [left] {$\overrightarrow{\mt{P}}$};
+\end{tikzpicture}
+\end{minipage}
+\vspace{0.5cm}
+
+L'amplitude du vecteur de Poyntig diminue lorsque l'on s'approche de l'axe. On en déduit que de l'énergie électromagnétique est cédée au conducteur. C'est de l'énergie électrique convertie en énergie thermique.
+
+Cette conversion provoque l'échauffement du conducteur.
+\subsection{Question}
+La question qui se pose est : "qu'en est-il de l'effet Joule, à quoi est due l'échauffement du conducteur" : Faut-il considérer l'effet Joule comme la superposition des deux phénomènes
+\begin{itemize}[leftmargin=1cm, label=\ding{32}, itemsep=1pt]
+\item {\bf collision électron-ions :} les électrons mobile cèdent de l'énergie au réseau ionique,
+\item {\bf vecteur de Poyting :} le champ électromagnétique cède de l'énergie au conducteur ?
+\end{itemize}
 

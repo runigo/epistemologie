@@ -1,24 +1,73 @@
 
 \begin{appendix}
 
+\chapter{Système et grandeurs}
+
+\section{Exemples}
+
+\subsection{Système solaire}
+Le système solaire est constitué du soleil et des planètes. On associe à ce système des grandeurs : 
+\begin{itemize}[leftmargin=1cm, label=\ding{32}, itemsep=1pt]
+\item La position des astres
+\item Leur vitesse
+\item Leur masse
+\end{itemize}
+
+\subsection{Pendule}
+Un pendule pesant est un système physique constitué par un corps suspendu à un fil rigide, placé dans un champ de gravitation. On associe à ce système des grandeurs :
+\begin{itemize}[leftmargin=1cm, label=\ding{32}, itemsep=1pt]
+\item La masse du corps
+\item La longueur du fil
+\item L'accélération du champ de pesanteur
+\item La position du pendule et sa vitesse
+\end{itemize}
+
+\subsection{Système mécanique}
+Les deux exemples précédent sont des systèmes mécaniques. En générale, l'état d'un système est déterminé par la donnée des positions et des vitesses de ses composants.
+
+\section{Loi physique}
+L'objet de la physique est de déterminer l'évolution des systèmes au cours du temps : connaissant l'état d'un système à un instant, quel est son état l'instant suivant.
+
+Les lois physiques sont des relations permettant de déterminer cette évolution.
+
+
 \chapter{Dérivée et intégrale}
 
-\begin{tikzpicture}
-\draw[->] (0,-2) -- (0,2) node[right] {$\int\!\!f(x)$};
-\draw[color=red,domain=-3:3,samples=100] plot ({\x},{0.9+0.6*rad(atan(2*\x))});
-\draw[->] (-3,0) -- (3,0) node[right] {$x$};
-\end{tikzpicture} 
-
+Exemple graphique : on considère la fonction suivante :
+\begin{center}
 \begin{tikzpicture}
 \draw[->] (0,-2) -- (0,2) node[right] {$f(x)$};
-%\draw[color=red,domain=-3:3,samples=100] plot ({\x},{exp(-0.5*\x*\x))});
 \draw[color=red,domain=-3:3,samples=100] plot ({\x},{1/(1+\x*\x)});
 \draw[->] (-3,0) -- (3,0) node[right] {$x$};
 \end{tikzpicture} 
+\end{center}
+
+Elle possède une dérivée et une intégrale :
+\vspace{0.5cm}
+
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+Dérivée de f(x) :
 
 \begin{tikzpicture}
 \draw[->] (0,-2) -- (0,2) node[right] {$f'(x)$};
 \draw[color=red,domain=-3:3,samples=100] plot ({\x},{-2*\x/(1+\x*\x)/(1+\x*\x))});
 \draw[->] (-3,0) -- (3,0) node[right] {$x$};
 \end{tikzpicture} 
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.45\linewidth}
+\begin{center}
+Intégrale de f(x)
+
+\begin{tikzpicture}
+\draw[->] (0,-2) -- (0,2) node[right] {$\int\!\!f(x)$};
+\draw[color=red,domain=-3:3,samples=100] plot ({\x},{0.9+0.6*rad(atan(2*\x))});
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\end{tikzpicture} 
+\end{center}
+\end{minipage}
+
 \end{appendix}
+
