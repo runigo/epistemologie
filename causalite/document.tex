@@ -1,9 +1,7 @@
-\documentclass[11pt, a4paper]{report}
+\documentclass[12pt, a4paper]{report}
 %\documentclass[11pt, a4paper]{article}
 
 %====================== PACKAGES ======================
-
-
 \usepackage[french]{babel}
 
 \frenchbsetup{StandardLists=true}
@@ -11,48 +9,55 @@
 \usepackage{pifont}
 
 \usepackage[utf8x]{inputenc}
-%\usepackage[latin1]{inputenc} % Feynman
+%\usepackage[latin1]{inputenc}
 
 %pour gérer les positionnement d'images
 \usepackage{float}
 \usepackage{amsmath}
 \DeclareMathOperator{\dt}{dt}
+\usepackage{amsfonts}
 \usepackage{graphicx}
-\usepackage{tabularx}
+%\usepackage{tabularx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{url}
+
 %pour les informations sur un document compilé en PDF et les liens externes / internes
 \usepackage[pdfborder=0]{hyperref}
 \hypersetup{
 	colorlinks = true
 	}
+
 %pour la mise en page des tableaux
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{multicol}
 \setlength{\columnsep}{50pt}
+
 %pour utiliser \floatbarrier
 %\usepackage{placeins}
 %\usepackage{floatrow}
+
 %espacement entre les lignes
 \usepackage{setspace}
+
 %modifier la mise en page de l'abstract
 \usepackage{abstract}
+
 %police et mise en page (marges) du document
 \usepackage[T1]{fontenc}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
 %Pour les galerie d'images
 \usepackage{subfig}
 
 \usepackage{pdfpages}
+
 \usepackage{tikz}
-%\usepackage{tikz}
 \usetikzlibrary{trees}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
-\usetikzlibrary{decorations.pathmorphing,calc,shapes,shapes.geometric,patterns}
 %\usetikzlibrary{decorations}
 \usetikzlibrary{angles, quotes}
 \usepackage{verbatim}
@@ -62,10 +67,6 @@
 \usepackage{comment}
 
 \usepackage{xcolor}
-
-\hypersetup{colorlinks=true,linkcolor=black}
-
-\usepackage{makeidx}
 
 %\PreviewEnvironment{tikzpicture}
 %\setlength\PreviewBorder{0pt}%
@@ -84,12 +85,11 @@ pdfkeywords = {Document},	% Mots-clefs
 pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %pdfcreator = {MikTeX},% Logiciel qui a crée le document
 %pdfproducer = {} % Société avec produit le logiciel
-\makeindex % Créer un index
 %======================== DEFINITION COMMANDES ========================
-\newcommand{\ul}[1]{\underline{#1}}
-\newcommand{\mt}[1]{\text{#1}}
-\newcommand{\mc}[1]{\mathcal{#1}}
-\newcommand{\pt}[1]{\dot{\text{#1}}}
+\newcommand{\si}[1]{\textsf{\textit {#1}}}
+\newcommand{\fsb}[1]{\textsf{\textbf {\footnotesize #1}}}
+\newcommand{\ib}[1]{\item {\bf #1}}
+\newcommand{\bi}[1]{\textbf{\textit {#1}}}
 %======================== DEBUT DU DOCUMENT ========================
 %
 \begin{document}
@@ -108,28 +108,19 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 %espacement entre les lignes des tableaux
 \renewcommand{\arraystretch}{1.5}
 %
-%====================== INCLUSION DES PARTIES ======================
+%====================== INCLUSION DES CHAPITRES ======================
 %
 ~
 \thispagestyle{empty}
 %recommencer la numérotation des pages à "1"
 \setcounter{page}{0}
 \newpage
-%\input{./systemeDuMonde/systemeDuMonde.tex}
-%\input{./mouvementEtRelativite/mouvementEtRelativite.tex}
+%\large
+%\input{./dico/dico.tex}
+\input{./philo/philo.tex}
+\input{./science/science.tex}
 %
-%volume-1-2021-06-30.pdf
-%\input{./physiqueStatistique/physiqueStatistique.tex}
-%\input{./forceEtEnergie/forceEtEnergie.tex}
-%\input{./theorieDesChamps/theorieDesChamps.tex}
-%\input{./physiqueQuantique/physiqueQuantique.tex}
-%\input{./structureDesRevolutions/structureDesRevolutions.tex}
-\input{./systemeGrandeurEtLoi/systemeGrandeurEtLoi.tex}
-\input{./connaissanceObjective/connaissanceObjective.tex}
-%\input{./plans/plans.tex}
-%\input{./annexe/annexe.tex}
-%
-%\printindex
+%\input{./chapitre2/chapitre2.tex}
 %
 %====================== INCLUSION DE LA BIBLIOGRAPHIE ======================
 %
@@ -143,6 +134,8 @@ pdfstartview={FitH}}	% ajuste la page à la largeur de l'écran
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Bibliographie}
 \bibliography{bibliographie.bib}
+%
+%====================== FIN DU DOCUMENT ======================
 %
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
