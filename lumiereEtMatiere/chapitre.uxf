@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>150</x>
+      <y>50</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Atomisme</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>30</x>
+      <y>100</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>4 éléments
+--
+ eau, air, terre, feu</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>10</x>
+      <y>180</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>92 éléments
+--
+
+Classification  périodique</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>520</x>
+      <y>130</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Rayon lumineux</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>640</x>
+      <y>240</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Onde</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>420</x>
+      <y>350</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Électromagnétisme</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>280</y>
+      <w>180</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Atome
+--
+électron, proton,</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>50</x>
+      <y>610</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Mécanique quantique</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>330</x>
+      <y>410</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Thermodynamique</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>60</x>
+      <y>380</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Mécanique classique</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>540</x>
+      <y>610</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Relativité générale</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>300</x>
+      <y>110</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Antique et médiévale
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>300</x>
+      <y>230</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Physique Classique
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>210</x>
+      <y>480</y>
+      <w>350</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Crise scientifique de la fin du XIXe
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.InteractionFrame</type>
+    <coordinates>
+      <x>0</x>
+      <y>10</y>
+      <w>270</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>Matière</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.InteractionFrame</type>
+    <coordinates>
+      <x>470</x>
+      <y>20</y>
+      <w>320</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>Lumière</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>290</x>
+      <y>550</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Physique contemporaine
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.element.Class</type>
+    <coordinates>
+      <x>310</x>
+      <y>610</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Physique statistique</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
