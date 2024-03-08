@@ -87,5 +87,10 @@ document.log
 document.out
 document.pdf
 document.toc
+bibliographie.bib
+document.bbl
+document.blg
+document.dvi
+document.tex
 
 
