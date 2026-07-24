@@ -1,4 +1,22 @@
-
-\newcommand\fusee { 
-
+% angles et dimensions corps
+\def\angleSommet{65}; \def\angleBase{15};\def\demiSommet{1.5}; \def\demiBase{0.2};
+% angles et dimensions pieds
+\def\anglePied1{115};\def\anglePied2{225};\def\anglePied3{205};
+\def\pied1{4*\demiBase};\def\pied2{\demiBase};\def\pied3{15};
+\newcommand\fusee{
+% Coordonnées des points
+\coordinate (ss) at (\demiSommet,0);
+\coordinate (dd) at (-\demiSommet,-\demiBase);
+\coordinate (gg) at (-\demiSommet,\demiBase);
+% Corps de la fusée
+\fill[line width=1.5pt, draw=black, fill=white]
+  (gg) to[out=\angleBase, in=90+\angleSommet]
+  (ss) to[out=-90-\angleSommet, in=-\angleBase]
+  (dd) -- cycle;
+cycle;
+%Pied1
+\fill[line width=1.5pt, draw=black, fill=white]
+  (-0.33*\demiSommet, 1.2*\demiBase) to[out=\anglePied1, in=0]
+  () to[out=, in=]
+  () -- cycle;
 }

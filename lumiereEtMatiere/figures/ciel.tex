@@ -1,4 +1,17 @@
 
-\newcommand\ciel { 
-
+\newcommand\ciel{
+% Fond de ciel rond (cercle noir-bleuté)
+\fill[black!80!blue] (0,0) circle (5);
+% Liste des étoiles : {angle, rayon, taille, opacité}
+\def\stars{%
+    30/4/0.05/0.8,    60/3/0.08/0.9,    120/4.5/0.03/0.6,    180/2/0.1/1.0,
+    210/3.5/0.04/0.7,    240/4/0.06/0.8,    270/2.5/0.07/0.9,    300/3.8/0.05/0.7,
+    330/4.2/0.04/0.6,    10/3.5/0.09/1.0
 }
+% Dessiner les étoiles en parcourant la liste
+\foreach \angle/\rayon/\size/\opacity in \stars {
+    % Conversion des coordonnées polaires en cartésiennes
+    \pgfmathsetmacro{\x}{\rayon * cos(\angle)}
+    \pgfmathsetmacro{\y}{\rayon * sin(\angle)}
+    \fill[white, opacity=\opacity] (\x,\y) circle (\size);
+}}
