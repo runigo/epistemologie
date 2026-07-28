@@ -1,8 +1,6 @@
-% angles et dimensions corps
+% Angles et dimensions corps
 \def\angleSommet{65} \def\angleBase{15} \def\demiSommet{1.5} \def\demiBase{0.2}
-% angles des ailes
-%\def\anglePied1{115};\def\anglePied2{225};\def\anglePied3{205};
-\def\piedHaut{4*\demiBase} \def\piedAvant{\demiBase} \def\piedArriere{15} 
+
 % Ordonnées des ailes en fonction de rotation
 \pgfmathsetmacro{\hauteur}{\demiBase * 2.2}  \def\rotation{15}
 
@@ -23,7 +21,9 @@
 \pgfmathsetmacro{\aileArriereD}{(-\hauteur-\demiBase) * cos(60+\rotation)}
 
 % Abscisses des ailes
-\def\aileA{-\demiSommet+\hauteur} \def\aileC{-\demiSommet-\hauteur} 
+\def\aileA{-\demiSommet+\hauteur} \def\aileC{-\demiSommet-\hauteur}
+% Angles des ailes
+\def\anglePied{45}
 
 \newcommand\fusee{
 %  PIED 3
@@ -31,8 +31,9 @@
 \coordinate (a33) at (\aileC,\aileArriereC); \coordinate (a34) at (-\demiSommet,\aileArriereD);
 \fill[ultra thin, draw=black, fill=red!60!yellow] (a31) -- (a32) -- (a33) -- (a34) -- cycle;
 \fill[ultra thin, draw=black, fill=red] (\aileC,\aileArriereD) circle (\demiBase);
-\fill[ultra thin, draw=black, fill=blue] (\aileC,\aileArriereD - \demiBase) -- 
-  (\aileC,\aileArriereD + \demiBase) -- (a34) -- cycle;
+\fill[ultra thin, draw=black, fill=blue]
+  (\aileC,\aileArriereD + \demiBase) to[out=0, in=90+\anglePied] (a34)
+  to[out=-90-\anglePied, in=0] (\aileC,\aileArriereD - \demiBase) -- cycle;
 
 %  CORPS DE LA FUSÉE
 \coordinate (ss) at (\demiSommet,0);
@@ -46,13 +47,16 @@
 \coordinate (a13) at (\aileC,\aileHautC); \coordinate (a14) at (-\demiSommet,\aileHautD);
 \fill[ultra thin, draw=black, fill=red!60!yellow] (a11) -- (a12) -- (a13) -- (a14) -- cycle;
 \fill[ultra thin, draw=black, fill=red] (\aileC,\aileHautD) circle (\demiBase);
-\fill[ultra thin, draw=black, fill=blue] (\aileC,\aileHautD + \demiBase) -- 
- (\aileC,\aileHautD - \demiBase) -- (a14) -- cycle;
+\fill[ultra thin, draw=black, fill=blue] (\aileC,\aileHautD + \demiBase) to[out=0, in=90+\anglePied]
+(a14) to[out=-90-\anglePied, in=0] (\aileC,\aileHautD - \demiBase) -- cycle;
+
 %  PIED 2
 \coordinate (a21) at (\aileA,\aileAvantA); \coordinate (a22) at (-\demiSommet,\aileAvantB);
 \coordinate (a23) at (\aileC,\aileAvantC); \coordinate (a24) at (-\demiSommet,\aileAvantD);
 \fill[ultra thin, draw=black, fill=red!60!yellow] (a21) -- (a22) -- (a23) -- (a24) -- cycle;
 \fill[ultra thin, draw=black, fill=red] (\aileC,\aileAvantD) circle (\demiBase);
-\fill[ultra thin, draw=black, fill=blue] (\aileC,\aileAvantD - \demiBase) -- 
-  (\aileC,\aileAvantD + \demiBase) -- (a24) -- cycle;
+\fill[ultra thin, draw=black, fill=blue]
+  (\aileC,\aileAvantD + \demiBase) to[out=0, in=90+\anglePied] (a24)
+  to[out=-90-\anglePied, in=0] (\aileC,\aileAvantD - \demiBase) -- cycle;
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
