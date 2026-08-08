@@ -22,41 +22,44 @@
 
 % Abscisses des ailes
 \def\aileA{-\demiSommet+\hauteur} \def\aileC{-\demiSommet-\hauteur}
+\def\decalage{0.02} % perspective
 % Angles des ailes
 \def\anglePied{45}
-
+\tikzstyle{pied}=[ultra thin, draw=black, top color=red , bottom color=gray!60!red]%ultra thin, draw=black, fill=red
+\tikzstyle{cheville}=[ultra thin, draw=black, top color=blue , bottom color=gray!60!blue]
 \newcommand\fusee{
 %  PIED 3
-\coordinate (a31) at (\aileA,\aileArriereA); \coordinate (a32) at (-\demiSommet,\aileArriereB);
-\coordinate (a33) at (\aileC,\aileArriereC); \coordinate (a34) at (-\demiSommet,\aileArriereD);
-\fill[ultra thin, draw=black, fill=red!60!yellow] (a31) -- (a32) -- (a33) -- (a34) -- cycle;
-\fill[ultra thin, draw=black, fill=red] (\aileC,\aileArriereD) circle (\demiBase);
-\fill[ultra thin, draw=black, fill=blue]
-  (\aileC,\aileArriereD + \demiBase) to[out=0, in=90+\anglePied] (a34)
-  to[out=-90-\anglePied, in=0] (\aileC,\aileArriereD - \demiBase) -- cycle;
+\coordinate (a31) at (\aileA-\decalage,\aileArriereA); \coordinate (a32) at (-\demiSommet-\decalage,\aileArriereB);
+\coordinate (a33) at (\aileC-\decalage,\aileArriereC); \coordinate (a34) at (-\demiSommet-\decalage,\aileArriereD);
+\shade[pied] (\aileC-\decalage,\aileArriereD) circle (\demiBase);
+\shade[cheville]
+  (\aileC-\decalage,\aileArriereD + \demiBase) to[out=0, in=90+\anglePied] (a34)
+  to[out=-90-\anglePied, in=0] (\aileC-\decalage,\aileArriereD - \demiBase) -- cycle;
+\fill[ultra thin, draw=black, fill=red!60!gray, rounded corners=1pt] (a31) -- (a32) -- (a33) -- (a34) -- cycle;
 
 %  CORPS DE LA FUSÉE
 \coordinate (ss) at (\demiSommet,0);
 \coordinate (dd) at (-\demiSommet,-\demiBase);
 \coordinate (gg) at (-\demiSommet,\demiBase);
-\fill[ultra thin,  draw=black, fill=red!40!yellow]
+\shade[top color=blue!60! , bottom color=gray!60!blue]
   (gg) to[out=\angleBase, in=90+\angleSommet] (ss) to[out=-90-\angleSommet, in=-\angleBase] (dd) -- cycle;
+\fill[fill=black!40!red] (-\demiSommet,0)ellipse(\decalage cm and \demiBase cm);
 
 %  PIED 1
 \coordinate (a11) at (\aileA,\aileHautA); \coordinate (a12) at (-\demiSommet,\aileHautB);
 \coordinate (a13) at (\aileC,\aileHautC); \coordinate (a14) at (-\demiSommet,\aileHautD);
-\fill[ultra thin, draw=black, fill=red!60!yellow] (a11) -- (a12) -- (a13) -- (a14) -- cycle;
-\fill[ultra thin, draw=black, fill=red] (\aileC,\aileHautD) circle (\demiBase);
-\fill[ultra thin, draw=black, fill=blue] (\aileC,\aileHautD + \demiBase) to[out=0, in=90+\anglePied]
+\fill[ultra thin, draw=black, fill=red!60!gray] (a11) -- (a12) -- (a13) -- (a14) -- cycle;
+\shade[pied] (\aileC,\aileHautD) circle (\demiBase);
+\shade[cheville] (\aileC,\aileHautD + \demiBase) to[out=0, in=90+\anglePied]
 (a14) to[out=-90-\anglePied, in=0] (\aileC,\aileHautD - \demiBase) -- cycle;
 
 %  PIED 2
-\coordinate (a21) at (\aileA,\aileAvantA); \coordinate (a22) at (-\demiSommet,\aileAvantB);
-\coordinate (a23) at (\aileC,\aileAvantC); \coordinate (a24) at (-\demiSommet,\aileAvantD);
-\fill[ultra thin, draw=black, fill=red!60!yellow] (a21) -- (a22) -- (a23) -- (a24) -- cycle;
-\fill[ultra thin, draw=black, fill=red] (\aileC,\aileAvantD) circle (\demiBase);
-\fill[ultra thin, draw=black, fill=blue]
-  (\aileC,\aileAvantD + \demiBase) to[out=0, in=90+\anglePied] (a24)
-  to[out=-90-\anglePied, in=0] (\aileC,\aileAvantD - \demiBase) -- cycle;
+\coordinate (a21) at (\aileA+\decalage,\aileAvantA); \coordinate (a22) at (-\demiSommet+\decalage,\aileAvantB);
+\coordinate (a23) at (\aileC+\decalage,\aileAvantC); \coordinate (a24) at (-\demiSommet+\decalage,\aileAvantD);
+\fill[ultra thin, draw=black, fill=red!80!gray] (a21) -- (a22) -- (a23) -- (a24) -- cycle;
+\shade[pied] (\aileC+\decalage,\aileAvantD) circle (\demiBase);
+\shade[cheville]
+  (\aileC+\decalage,\aileAvantD + \demiBase) to[out=0, in=90+\anglePied] (a24)
+  to[out=-90-\anglePied, in=0] (\aileC+\decalage,\aileAvantD - \demiBase) -- cycle;
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
